@@ -15,6 +15,7 @@ console.log(stdout);
 }); 
 msg.react('👍');
 }
+}
 
 exports.conf = {
     dev: true
