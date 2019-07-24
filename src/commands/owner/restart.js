@@ -9,6 +9,7 @@ exports.run = async(bot, msg, args) => {
         process.exit();
         await msg.react('👍');
 }
+}
 
 exports.conf = {
     dev: true
