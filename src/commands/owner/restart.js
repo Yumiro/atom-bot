@@ -5,7 +5,7 @@ exports.run = async(bot, msg, args) => {
         msg.react('👎');
     };
 
-    if (bot.config.ownerID.includes(msg.author.id)) 
+    if (bot.config.ownerID.includes(msg.author.id)) {
         process.exit();
         await msg.react('👍');
 }
