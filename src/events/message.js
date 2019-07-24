@@ -1,5 +1,8 @@
 module.exports = (bot, msg) => {
     if (msg.author.bot) return;
+    if (msg.content === 'updatetest') {
+        msg.react('👌');
+    }
     if (msg.content.indexOf(bot.config.prefix) !== 0) return;
 
     const args = msg.content.split(' ').slice(1)
