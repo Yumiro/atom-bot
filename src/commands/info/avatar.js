@@ -15,6 +15,6 @@ exports.conf = {
 exports.help = {
     name: 'avatar',
     category: '❔ Info',
-    description: 'Sends your avatar image.',
+    description: 'Sends ur avatar image.',
     usage: 'avatar'
 }
