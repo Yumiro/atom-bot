@@ -12,7 +12,7 @@ cwd: __dirname
 }, (err, stdout, stderr) => {
  if (err) return console.error(err); 
 console.log(stdout); 
-}); 
+}
 msg.react('👍');
 }
 }
