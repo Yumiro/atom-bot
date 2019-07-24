@@ -11,7 +11,7 @@ exports.run = (bot, msg, args) => {
 
         if (bot.config.ownerID.includes(msg.author.id)) {
 
-        msg.channel.send(`**Input:**\n\`\`\`js\n${args.join(" ")}\n\`\`\` \nLoading...`)
+        msg.channel.send(`**Input:**\n\`\`\`js\n${args.join(" ")}\n\`\`\``)
             .then((message) => 
             {
                 var code = JSON.stringify(eval(args.join(" ")));
