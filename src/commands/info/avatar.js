@@ -4,6 +4,7 @@ exports.run = async(bot, msg, args) => {
     const av = new MessageEmbed()
         .setColor(0x36393f)
         .setImage(msg.author.displayAvatarURL())
+        .setFooter('ok')
     msg.channel.send(av);
 };
 
