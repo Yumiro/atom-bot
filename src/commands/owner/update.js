@@ -1,6 +1,6 @@
 
 
-exports.run = (bot, msg, args) => {
+exports.run = async(bot, msg, args) => {
     if (!bot.config.ownerID.includes(msg.author.id)) {
         msg.react('👎');
     };
@@ -12,8 +12,9 @@ cwd: __dirname
 }, (err, stdout, stderr) => {
 if (err) return reject(err)
 console.log(stdout);
-}) 
-};
+});
+        msg.react('👍');
+}
 
 exports.conf = {
     dev: true
