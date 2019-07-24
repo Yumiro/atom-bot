@@ -6,7 +6,7 @@ const chalk = require('chalk');
 const { readdir } = require('fs');
 const folders = ['info', 'moderation', 'owner'];
 
-bot.commands = new Enmap();
+bot.commands = new Discord.Collection();
 bot.config = config;
 bot.chalk = chalk;
 
