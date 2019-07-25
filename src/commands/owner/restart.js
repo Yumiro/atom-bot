@@ -17,6 +17,7 @@ exports.conf = {
 }
 
 exports.help = {
+    aliases: ['r', 'reboot'],
     name: 'restart',
     category: '🚫 Owner',
     description: 'Restarts the bot.',
