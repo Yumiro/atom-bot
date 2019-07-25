@@ -12,6 +12,7 @@ exports.conf = {
 }
 
 exports.help = {
+    aliases: ['av'], 
     name: 'avatar',
     category: '❔ Info',
     description: 'Sends your avatar image.',
