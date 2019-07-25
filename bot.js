@@ -45,7 +45,7 @@ folders.forEach(folders => {
     files.forEach(f => {
       let props = require(`./commands/${f}`);
       console.log(chalk.blue(`[ LOAD ] Loading "${f}" command`));
-      bot.commands.set(props.help.name, props);
+      bot.commands.set(props.help.aliases, props.help.name, props);
     });
 }); */
 
