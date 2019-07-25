@@ -4,7 +4,7 @@ module.exports = (bot, msg) => {
 
     const args = msg.content.split(' ').slice(1)
     const command = msg.content.split(' ')[0].slice(bot.config.prefix.length).toLowerCase();
-    const cmd = bot.commands.get(cmd.help.alias[0], command);
+    const cmd = bot.commands.get(cmd.help.aliases[0], command);
 
     if (!cmd) return;
 
