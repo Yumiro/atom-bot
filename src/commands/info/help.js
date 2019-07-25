@@ -46,6 +46,7 @@ exports.conf = {
 }
 
 exports.help = {
+    aliases: ['?', 'h'], 
     name: 'help',
     category: '❔ Info',
     description: 'Sends a list of all commands that you can use.',
