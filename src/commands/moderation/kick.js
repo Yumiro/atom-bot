@@ -45,6 +45,7 @@ exports.conf = {
 }
 
 exports.help = {
+    aliases: ['k', 'donkeykick'],
     name: 'kick',
     category: '🔨 Moderation',
     description: 'Kicks a user from the guild.',
