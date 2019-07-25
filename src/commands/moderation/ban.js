@@ -45,7 +45,7 @@ exports.conf = {
 }
 
 exports.help = {
-    aliases: ['b', 'gtfo']
+    aliases: ['b', 'gtfo'],
     name: 'ban',
     category: '🔨 Moderation',
     description: 'Bans a user from the guild.',
