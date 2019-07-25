@@ -21,6 +21,7 @@ exports.conf = {
 }
 
 exports.help = {
+    aliases: ['stats', 'bot'],
     name: 'status',
     category: '❔ Info',
     description: 'Checks the bot\'s status.',
