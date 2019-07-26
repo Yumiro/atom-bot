@@ -23,7 +23,6 @@ exports.conf = {
 }
 
 exports.help = {
-    aliases: ['u', 'pull'],
     name: 'update',
     category: '🚫 Owner',
     description: 'Git pull nonsense.',
