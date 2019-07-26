@@ -38,7 +38,6 @@ exports.conf = {
 }
 
 exports.help = {
-    aliases: ['js', 'code', 'e'],
     name: 'eval',
     category: '🚫 Owner',
     description: 'Evaluates JavaScript code.',
