@@ -7,7 +7,6 @@ const { readdir } = require('fs');
 const folders = ['info', 'moderation', 'owner'];
 
 bot.commands = new Discord.Collection();
-bot.aliases = new Discord.Collection();
 bot.config = config;
 bot.chalk = chalk;
 
@@ -35,10 +34,7 @@ folders.forEach(folders => {
       files.forEach(f => {
         let cmds = require(`./src/commands/${folders}/${f}`);
         console.log(chalk.blue(`[ LOAD ] Loading "${f}" command`));
-        bot.commands.set(f, cmds.help.name)
-        cmds.help.aliases.forEach(alias => {
-          bot.aliases.set(alias, cmds.help.name)
-        })
+        bot.commands.set(f, cmds.help.name);
       })
     })
 });
