@@ -8,7 +8,6 @@ exports.conf = {
 }
 
 exports.help = {
-    aliases: ['pingpong', 'pong'],
     name: 'ping',
     category: '❔ Info',
     description: 'Checks the bot\'s ping.',
