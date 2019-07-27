@@ -34,6 +34,7 @@ exports.run = async(bot, msg, args) => {
             .setFooter(msg.guild.name)
             //.setDescription(`Command: ${cmd.help.name}\nCategory: ${cmd.help.category}\nDescription: ${cmd.help.description}\nUsage: ${cmd.help.usage}\nDev: ${cmd.conf.dev ? true : false}`)
             embed2.addField(`${firstUpper(cmd.help.name)}`, `${cmd.help.description}`, false)
+            embed2.addField(`Aliases`, `${cmd.help.aliases.join(', ')}`, true)
             embed2.addField(`Usage`, `${cmd.help.usage}`, true)
             embed2.addField(`Group`, `${cmd.help.category}`, true)
             await msg.channel.send(embed2);
