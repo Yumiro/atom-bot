@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const { Collection, MessageEmbed } = require('discord.js'); 
 const Enmap = require('enmap');
 const bot = new Discord.Client({ disableEveryone: true });
 const config = require("./config.json");
@@ -6,7 +7,8 @@ const chalk = require('chalk');
 const { readdir } = require('fs');
 const folders = ['info', 'moderation', 'owner'];
 
-bot.commands = new Discord.Collection();
+bot.commands = new Collection();
+bot.aliases = new Collection();
 bot.config = config;
 bot.chalk = chalk;
 
@@ -15,7 +17,9 @@ function login() {
 };
 
 readdir("./src/events/", (err, files) => {
-    if (err) return console.error(err);
+    if (err) {
+       console.error(err);
+    }
 
     files.forEach(f => {
       const event = require(`./src/events/${f}`);
@@ -28,13 +32,16 @@ readdir("./src/events/", (err, files) => {
 folders.forEach(folders => {
     readdir(`./src/commands/${folders}`, (err, files) => {
       if (err) {
-        console.log.error(err);
+        console.error(err);
       }
 
       files.forEach(f => {
         let cmds = require(`./src/commands/${folders}/${f}`);
         console.log(chalk.blue(`[ LOAD ] Loading "${f}" command`));
-        bot.commands.set(f, cmds.help.name);
+        bot.commands.set(cmds.help.name, cmds);
+        cmds.help.aliases.forEach(alias => { 
+        bot.aliases.set(alias, cmds.help.name)
+        })
       })
     })
 });
