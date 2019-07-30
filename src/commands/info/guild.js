@@ -1,38 +1,38 @@
-const { MessageEmbed } = requre('discord.js');
+const { MessageEmbed } = require('discord.js');
 const moment = require('moment');
 
 exports.run = async(bot, msg, args) => {
     let level = '';
     let content = '';
 
-    if (message.guild.verificationLevel === 0) {
-		level = `None • Unrestricted`;
-	} else if (message.guild.verificationLevel === 1) {
-		level = `Low • Verified Email on Discord`;
-	} else if (message.guild.verificationLevel === 2) {
-		level = `Medium • Registered on Discord for 5 minutes`;
-	} else if (message.guild.verificationLevel === 3) {
-		level = `(╯°□°）╯︵ ┻━┻ • Member on this Server for 10 minutes`;
-	} else if (message.guild.verificationLevel === 4) {
-		level = `┻━┻ ﾐヽ(ಠ益ಠ)ノ彡┻━┻ • Verified Phone on Discord`;
+    if (msg.guild.verificationLevel === 0) {
+		level = `Unrestricted`;
+	} else if (msg.guild.verificationLevel === 1) {
+		level = `Verified Email`;
+	} else if (msg.guild.verificationLevel === 2) {
+		level = `Registered for 5 min`;
+	} else if (msg.guild.verificationLevel === 3) {
+		level = `Member on the server for 10 min`;
+	} else if (msg.guild.verificationLevel === 4) {
+		level = `Verified Phone`;
     }
 
-    if (message.guild.explicitContentFilter === 0) {
-		content = `Scanning Off • No party like grandma's tea party`
-	} else if (message.guild.explicitContentFilter === 1) {
-		content = `Scanning On • Roles for trusted membership`;
-	} else if (message.guild.explicitContentFilter === 2) {
-		content = `Scanning On • Squeaky clean shine`;
+    if (msg.guild.explicitContentFilter === 0) {
+		content = `Grandma's tea party`
+	} else if (msg.guild.explicitContentFilter === 1) {
+		content = `Roles for trusted membership`;
+	} else if (msg.guild.explicitContentFilter === 2) {
+		content = `Squeaky clean shine`;
     }
     
     const embed = new MessageEmbed()
-        .setThumbnail(`${msg.guild.iconURL}`)
+        .setThumbnail(msg.guild.iconURL)
         .setAuthor(msg.guild.name, msg.guild.iconURL)
-        .setColor(0x7289da)
+        .setColor(0x36393f)
         .addField('User Count', `${msg.guild.members.size} users`, true)
         .addField('Channel Count', `${msg.guild.channels.size} channels`, true)
-        .addField(`Roles (${msg.guild.roles.size})`, `use \`!roles\``, true)
-        .addField('Created At', `${moment.utc(msg.guild.createdAt).format('dddd, MMMM Do YYYY')}`, true)
+        .addField(`Roles (${msg.guild.roles.size})`, `Use \`!roles\``, true)
+        .addField('Created At', `${moment.utc(msg.guild.createdAt).format('ddd, MMM Do YYYY')}`, true)
         .addField('Large', `${msg.guild.large ? 'Very' : 'No'}`, true)
         .addField('Owner', `<@${msg.guild.ownerID}>`, true)
         .addField('Content Filter', content, true)
