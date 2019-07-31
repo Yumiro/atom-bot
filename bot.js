@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
-const { Collection, MessageEmbed } = require('discord.js'); 
+const { Client, Collection, MessageEmbed } = require('discord.js'); 
 const Enmap = require('enmap');
-const bot = new Discord.Client({ disableEveryone: true });
+const bot = new Client({ disableEveryone: true });
 const config = require("./config.json");
 const chalk = require('chalk');
 const { readdir } = require('fs');
