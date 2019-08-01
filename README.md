@@ -1,12 +1,16 @@
 # About
-atom69 is a project made by flag#0004 and helped by Olykir#0911, atom69 is a discord bot made for flags guild to help with moderation and utility
+Atom is a bot project made by flag#0004, helped by Olykir#0911. Atom is a private Discord bot to help with moderation and utility.
 
 # Running the bot
 To run the bot using node you can use
 ```bash
 node bot.js
 ```
-To run the bot using pm2/node you can use
+To run the bot using pm2 you can use
 ```bash
 pm2 start bot.js --name Atom 
+```
+(if you're constantly updating it, you can also do this)
+```bash
+pm2 start bot.js --name Atom --watch
 ```
