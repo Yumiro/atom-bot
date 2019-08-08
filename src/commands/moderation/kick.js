@@ -1,19 +1,28 @@
+const { MessageEmbed } = require('discord.js');
+
 exports.run = (bot, msg, args) => {
     if (!msg.member.hasPermission('KICK_MEMBERS')) {
         msg.react(':thumbsdown:');
-        msg.channel.send(`You can't do that.`)
+        msg.channel.send(`You can't do that.`);
+
     } else {
+
     const reason = args.slice(1).join(' ');
     const user = msg.mentions.users.first();
     const member = msg.guild.member(user);
     
     if (user === msg.author) {
         msg.react('👎');
-        msg.channel.send(`I don't think kicking yourself would be a good idea.`);
     };
 
-    if (!reason) {
-        msg.channel.send(`Provide a reason.`);
+    if (!user || !reason) {
+        const embed = new MessageEmbed()
+            .addField('Kick', 'Kicks a user from the guild.', false)
+            .addField('Usage', 'kick [@user] [reason]', true)
+            .addField('Example', 'kick @flag#0001 stop pinging', true)
+            .setColor(0x36393f)
+            .setFooter(msg.guild.name)
+        msg.channel.send({ embed });
     };
 
     if (user) {
@@ -30,13 +39,7 @@ exports.run = (bot, msg, args) => {
                 console.error(err);
             });
         }
-        } else {
-            msg.react('👎');
-            msg.channel.send(`User not found.`);
-        }
-    } else {
-        msg.react('👎');
-        msg.channel.send(`User not found.`);
+    }
     };
 }};
 

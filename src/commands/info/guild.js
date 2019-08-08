@@ -12,7 +12,7 @@ exports.run = async(bot, msg, args) => {
 	} else if (msg.guild.verificationLevel === 2) {
 		level = `Registered for 5 min`;
 	} else if (msg.guild.verificationLevel === 3) {
-		level = `Member on the server for 10 min`;
+		level = `Member on server for 10 min`;
 	} else if (msg.guild.verificationLevel === 4) {
 		level = `Verified Phone`;
     }
@@ -20,7 +20,7 @@ exports.run = async(bot, msg, args) => {
     if (msg.guild.explicitContentFilter === 0) {
 		content = `Grandma's tea party`
 	} else if (msg.guild.explicitContentFilter === 1) {
-		content = `Roles for trusted membership`;
+		content = `Trusted membership`;
 	} else if (msg.guild.explicitContentFilter === 2) {
 		content = `Squeaky clean shine`;
     }

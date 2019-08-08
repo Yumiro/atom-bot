@@ -11,6 +11,7 @@ bot.commands = new Collection();
 bot.aliases = new Collection();
 bot.config = config;
 bot.chalk = chalk;
+bot.version = '1.1.4-stable-azer'
 
 function login() {
     bot.login(config.token);
@@ -23,7 +24,7 @@ readdir("./src/events/", (err, files) => {
 
     files.forEach(f => {
       const event = require(`./src/events/${f}`);
-      console.log(chalk.blue(`[ LOAD ] Loading "${f}" event`))
+      console.log(chalk.blue(`[ LOAD ] Loading ${f} (event)`))
       let event_name = f.split(".")[0];
       bot.on(event_name, event.bind(null, bot));
     });
@@ -37,7 +38,7 @@ folders.forEach(folders => {
 
       files.forEach(f => {
         let cmds = require(`./src/commands/${folders}/${f}`);
-        console.log(chalk.blue(`[ LOAD ] Loading "${f}" command`));
+        console.log(chalk.blue(`[ LOAD ] Loading ${f} (command)`));
         bot.commands.set(cmds.help.name, cmds);
         cmds.help.aliases.forEach(alias => { 
         bot.aliases.set(alias, cmds.help.name)
@@ -51,7 +52,7 @@ folders.forEach(folders => {
 
     files.forEach(f => {
       let props = require(`./commands/${f}`);
-      console.log(chalk.blue(`[ LOAD ] Loading "${f}" command`));
+      console.log(chalk.blue(`[ LOAD ] Loading ${f} command`));
       bot.commands.set(props.help.aliases, props.help.name, props);
     });
 }); */

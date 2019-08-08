@@ -1,5 +1,4 @@
 module.exports = (bot, msg) => {
-    if (msg.author.bot) return;
     if (msg.channel.type === 'dm') return;
     if (msg.content.indexOf(bot.config.prefix) !== 0) return;
 

@@ -14,7 +14,7 @@ exports.run = async(bot, msg, args) => {
             .setFooter(msg.guild.name)
             .setTitle(`Help`)
             if (bot.config.ownerID.includes(msg.author.id)) {
-                embed.addField(`:no_entry_sign: Owner`, `\`${bot.commands.filter(f => f.help.category === '🚫 Owner').map(f => f.help.name).join(`\` \``)}\``, true)
+                embed.addField(`:no_entry_sign: Owner`, `\`${bot.commands.filter(f => f.help.category === '🚫 Owner' && f.conf.hidden === false).map(f => f.help.name).join(`\` \``)}\``, true)
             }
 
             if (msg.member.hasPermission('KICK_MEMBERS') && msg.member.hasPermission('BAN_MEMBERS') && msg.member.hasPermission('MANAGE_MESSAGES')) {
@@ -29,15 +29,25 @@ exports.run = async(bot, msg, args) => {
         let cmd = args[0];
         if (bot.commands.has(cmd)) {
             cmd = bot.commands.get(cmd);
+            if (cmd.conf.hidden === true) {
+                msg.react('👎');
+                return;
+            };
+            if (cmd.conf.dev === true && !bot.config.ownerID.includes(msg.author.id)) {
+                msg.react('👎');
+                return;
+            };
             var embed2 = new MessageEmbed()
-            .setColor(0x36393f)
-            .setFooter(msg.guild.name)
+                .setColor(0x36393f)
+                .setFooter(msg.guild.name)
             //.setDescription(`Command: ${cmd.help.name}\nCategory: ${cmd.help.category}\nDescription: ${cmd.help.description}\nUsage: ${cmd.help.usage}\nDev: ${cmd.conf.dev ? true : false}`)
             embed2.addField(`${firstUpper(cmd.help.name)}`, `${cmd.help.description}`, false)
             embed2.addField(`Aliases`, `${cmd.help.aliases.sort().join(', ')}`, true)
             embed2.addField(`Usage`, `${cmd.help.usage}`, true)
             embed2.addField(`Group`, `${cmd.help.category}`, true)
             await msg.channel.send(embed2);
+        } else {
+            msg.react('👎');
         }
     }
 };

@@ -13,7 +13,8 @@ exports.run = async(bot, msg, args) => {
 }
 
 exports.conf = {
-    dev: true
+    dev: true,
+    hidden: false
 }
 
 exports.help = {

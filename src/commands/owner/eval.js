@@ -1,3 +1,5 @@
+const { inspect } = require('util');
+
 exports.run = (bot, msg, args) => {
     if (!bot.config.ownerID.includes(msg.author.id)) {
         msg.react('👎');
@@ -14,17 +16,14 @@ exports.run = (bot, msg, args) => {
         msg.channel.send(`**Input:**\n\`\`\`js\n${args.join(" ")}\n\`\`\``)
             .then((message) => 
             {
-                var code = JSON.stringify(eval(args.join(" ")));
-                var token = bot.config.token;
-                for (var key in token)
-                {
-                    if (code && code.includes(token))
-                    {
-                    msg.react('👎')
+                var code = eval(args.join(" "));
+                if (args.includes('bot.token')) {
                     return;
                 }
-            }
-                message.edit(`**Input:**\n\`\`\`js\n${args.join(" ")}\n\`\`\` \n` + `**Output:**\n\`\`\`js\n${require('util').inspect(code, {compact: true, depth: 0})}\n\`\`\` \n`).catch(err => {
+                if (args.includes('bot.config')) {
+                    return;
+                }
+                message.edit(`**Input:**\n\`\`\`js\n${args.join(" ")}\n\`\`\` \n` + `**Output:**\n\`\`\`js\n${inspect(code, {compact: true, depth: 0})}\n\`\`\` \n`).catch(err => {
                     msg.channel.send(`\`\`\`js\n${err}\n\`\`\``)
                 });
         }).catch(err => {
@@ -34,11 +33,12 @@ exports.run = (bot, msg, args) => {
 }};
 
 exports.conf = {
-    dev: true
+    dev: true,
+    hidden: false
 }
 
 exports.help = {
-    aliases: ['e', 'js', 'code'],
+    aliases: ['js', 'code'],
     name: 'eval',
     category: '🚫 Owner',
     description: 'Evaluates JavaScript code.',
