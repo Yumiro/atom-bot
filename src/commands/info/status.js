@@ -6,7 +6,7 @@ exports.run = async(bot, msg, args) => {
     const duration = moment.duration(bot.uptime).format('D[d], H[h], m[m], s[s]');
 
     var status = new MessageEmbed()
-        .setColor(0x36393f)
+        .setColor('TRANSPARENT')
         .addField(`Memory Usage`, `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB`, true)
         .addField(`Uptime`, `${duration}`, true)
         .addField(`Commands`, `${bot.commands.size} commands`, true)

@@ -20,7 +20,7 @@ exports.run = (bot, msg, args) => {
             .addField('Ban', 'Bans a user from the guild.', false)
             .addField('Usage', 'ban [@user] [reason]', true)
             .addField('Example', 'ban @flag#0001 stop spamming', true)
-            .setColor(0x36393f)
+            .setColor('TRANSPARENT')
             .setFooter(msg.guild.name)
         msg.channel.send({ embed });
     };

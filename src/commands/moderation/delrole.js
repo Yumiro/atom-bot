@@ -16,7 +16,7 @@ exports.run = (bot, msg, args) => {
             .addField('Delrole', 'Removes a role to a user in the guild.', false)
             .addField('Usage', 'delrole [@user] [role]', true)
             .addField('Example', 'delrole @flag#0001 big dummy', true)
-            .setColor(0x36393f)
+            .setColor('TRANSPARENT')
             .setFooter(msg.guild.name)
         msg.channel.send({ embed });
     };

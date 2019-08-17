@@ -16,7 +16,7 @@ exports.run = (bot, msg, args) => {
             .addField('Addrole', 'Adds a role to a user in the guild.', false)
             .addField('Usage', 'addrole [@user] [role]', true)
             .addField('Example', 'addrole @flag#0001 automaton', true)
-            .setColor(0x36393f)
+            .setColor('TRANSPARENT')
             .setFooter(msg.guild.name)
         msg.channel.send({ embed });
     };

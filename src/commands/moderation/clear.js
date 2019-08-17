@@ -14,7 +14,7 @@ exports.run = async(bot, msg, args) => {
             .addField('Clear', 'Clears a certain amount of messages in the channel.', false)
             .addField('Usage', 'clear [number between 1 and 100]', true)
             .addField('Example', 'clear 42', true)
-            .setColor(0x36393f)
+            .setColor('TRANSPARENT')
             .setFooter(msg.guild.name)
         msg.channel.send({ embed });
     };

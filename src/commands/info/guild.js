@@ -10,9 +10,9 @@ exports.run = async(bot, msg, args) => {
 	} else if (msg.guild.verificationLevel === 1) {
 		level = `Verified Email`;
 	} else if (msg.guild.verificationLevel === 2) {
-		level = `Registered for 5 min`;
+		level = `Registered (5 min)`;
 	} else if (msg.guild.verificationLevel === 3) {
-		level = `Member on server for 10 min`;
+		level = `Server Member (10 min)`;
 	} else if (msg.guild.verificationLevel === 4) {
 		level = `Verified Phone`;
     }
@@ -28,7 +28,7 @@ exports.run = async(bot, msg, args) => {
     const embed = new MessageEmbed()
         .setThumbnail(msg.guild.iconURL)
         .setAuthor(msg.guild.name, msg.guild.iconURL)
-        .setColor(0x36393f)
+        .setColor('TRANSPARENT')
         .addField('User Count', `${msg.guild.members.size} users`, true)
         .addField('Channel Count', `${msg.guild.channels.size} channels`, true)
         .addField(`Roles (${msg.guild.roles.size})`, `Use \`!roles\``, true)

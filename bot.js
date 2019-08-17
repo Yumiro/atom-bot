@@ -5,17 +5,13 @@ const bot = new Client({ disableEveryone: true });
 const config = require("./config.json");
 const chalk = require('chalk');
 const { readdir } = require('fs');
-const folders = ['info', 'moderation', 'owner'];
+const folders = ['fun', 'info', 'moderation', 'owner',];
 
 bot.commands = new Collection();
 bot.aliases = new Collection();
 bot.config = config;
 bot.chalk = chalk;
-bot.version = '1.1.4-stable-azer'
-
-function login() {
-    bot.login(config.token);
-};
+bot.version = '1.4.5-stable-azer';
 
 readdir("./src/events/", (err, files) => {
     if (err) {
@@ -57,4 +53,4 @@ folders.forEach(folders => {
     });
 }); */
 
-login();
+bot.login(config.token);
