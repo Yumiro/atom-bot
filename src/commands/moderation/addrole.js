@@ -13,10 +13,10 @@ exports.run = (bot, msg, args) => {
 
     if (!user || !role) {
         const embed = new MessageEmbed()
-            .addField('Addrole', 'Adds a role to a user in the guild.', false)
-            .addField('Usage', 'addrole [@user] [role]', true)
-            .addField('Example', 'addrole @flag#0001 automaton', true)
-            .setColor(0x36393f)
+            .addField(bot.firstUpper(this.help.name), this.help.description, false)
+            .addField('Usage', this.help.usage, true)
+            .addField('Example', this.help.example, true)
+            .setColor('TRANSPARENT')
             .setFooter(msg.guild.name)
         msg.channel.send({ embed });
     };
@@ -42,6 +42,7 @@ exports.conf = {
 exports.help = {
     aliases: ['arole', 'role', 'giverole'],
     name: 'addrole',
+    example: 'addrole @flag automaton',
     category: '🔨 Moderation',
     description: 'Adds a role to user in the guild.',
     usage: 'addrole [@user] [role]'

@@ -1,47 +1,50 @@
 const { MessageEmbed } = require('discord.js');
 
 exports.run = (bot, msg, args) => {
-    if (!msg.member.hasPermission('KICK_MEMBERS')) {
-        msg.react(':thumbsdown:');
-        msg.channel.send(`You can't do that.`);
-
-    } else {
-
-    const reason = args.slice(1).join(' ');
+    const { guild } = msg.channel;
+    const argsv2 = msg.content.split(' ').slice(1);
     const user = msg.mentions.users.first();
-    const member = msg.guild.member(user);
-    
-    if (user === msg.author) {
-        msg.react('👎');
-    };
-
-    if (!user || !reason) {
-        const embed = new MessageEmbed()
-            .addField('Kick', 'Kicks a user from the guild.', false)
-            .addField('Usage', 'kick [@user] [reason]', true)
-            .addField('Example', 'kick @flag#0001 stop pinging', true)
-            .setColor(0x36393f)
-            .setFooter(msg.guild.name)
-        msg.channel.send({ embed });
-    };
+    const member = guild.member(user);
+    const reason = `${msg.content.split(' ').slice(2).join(' ') || 'kick command issued'}`;
+    const auditlog_reason = `[${msg.author.tag}] ${msg.content.split(' ').slice(2).join(' ') || 'kick command issued'}`;
 
     if (user) {
         if (member) {
-            if (reason) {
-            if (member.hasPermission('KICK_MEMBERS')) {
+            if (msg.member.hasPermission('KICK_MEMBERS')) {
+                if (!member.hasPermission('KICK_MEMBERS')) {
+                    member.kick({
+                        reason: auditlog_reason,
+                    }).then(() => {
+                        const embed = new MessageEmbed()
+                            .setColor('TRANSPARENT')
+                            .setFooter(msg.guild.name)
+                            .setTitle(`Kick`)
+                            .addField(`User`, `${user.tag} (${user.id})`, false)
+                            .addField(`Reason`, `${reason}`, false)
+                        guild.channels.find(f => f.id === '613783841869529094').send(embed);
+                    }).catch(err => {
+                        console.error(err);
+                    });
+                } else {
+                    msg.react('👎');
+                    return;
+                };
+            } else {
                 msg.react('👎');
-                msg.channel.send(`This user is a mod/admin, I can't do that.`);
+                return;
             };
-            member.kick(`Responsible User: ${msg.author.tag} (${reason})`).then(() => {
-            msg.react('👍');
-            console.log(bot.chalk.red(`[ KICK ] ${user.tag} was kicked by ${msg.author.tag}, ${reason}`));
-            }).catch(err => {
-                console.error(err);
-            });
-        }
-    }
+        };
+    } else {
+        const embedv2 = new MessageEmbed()
+            .addField(bot.firstUpper(this.help.name), this.help.description, false)
+            .addField('Usage', this.help.usage, true)
+            .addField('Example', this.help.example, true)
+            .setColor('TRANSPARENT')
+            .setFooter(msg.guild.name)
+        msg.channel.send(embedv2);
+        return;
     };
-}};
+};
 
 exports.conf = {
     dev: false
@@ -50,6 +53,7 @@ exports.conf = {
 exports.help = {
     aliases: ['k'],
     name: 'kick',
+    example: 'kick @flag stop being rude',
     category: '🔨 Moderation',
     description: 'Kicks a user from the guild.',
     usage: 'kick [@user] [reason]'

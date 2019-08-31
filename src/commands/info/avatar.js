@@ -2,7 +2,7 @@ const { MessageEmbed } = require('discord.js');
 
 exports.run = async(bot, msg, args) => {
     const av = new MessageEmbed()
-        .setColor(0x36393f)
+        .setColor('TRANSPARENT')
         .setImage(msg.author.displayAvatarURL())
     msg.channel.send(av);
 };

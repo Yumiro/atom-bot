@@ -1,16 +1,12 @@
-
-
 exports.run = async(bot, msg, args) => {
     if (!bot.config.ownerID.includes(msg.author.id)) {
         msg.react('👎');
-    };
-
-    if (bot.config.ownerID.includes(msg.author.id)) {
+    } else {
         msg.react('👍').then(() => { 
-        process.exit();
-})
-}
-}
+            process.exit();
+    });
+};
+};
 
 exports.conf = {
     dev: true,

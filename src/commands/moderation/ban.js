@@ -1,47 +1,51 @@
 const { MessageEmbed } = require('discord.js');
 
 exports.run = (bot, msg, args) => {
-    if (!msg.member.hasPermission('KICK_MEMBERS')) {
-        msg.react(':thumbsdown:');
-        msg.channel.send(`You can't do that.`);
-
-    } else {
-
-    const reason = args.slice(1).join(' ');
+    const { guild } = msg.channel;
+    const argsv2 = msg.content.split(' ').slice(1);
     const user = msg.mentions.users.first();
-    const member = msg.guild.member(user);
-    
-    if (user === msg.author) {
-        msg.react('👎');
-    };
-
-    if (!user || !reason) {
-        const embed = new MessageEmbed()
-            .addField('Ban', 'Bans a user from the guild.', false)
-            .addField('Usage', 'ban [@user] [reason]', true)
-            .addField('Example', 'ban @flag#0001 stop spamming', true)
-            .setColor(0x36393f)
-            .setFooter(msg.guild.name)
-        msg.channel.send({ embed });
-    };
+    const member = guild.member(user);
+    const reason = `${msg.content.split(' ').slice(2).join(' ') || 'ban command issued'}`;
+    const auditlog_reason = `[${msg.author.tag}] ${msg.content.split(' ').slice(2).join(' ') || 'ban command issued'}`;
+    const embed = new MessageEmbed()
+        .setColor('TRANSPARENT')
+        .setFooter(msg.guild.name)
+        .setTitle(`Ban`)
+        .addField(`User`, `${user.tag} (${user.id})`, false)
+        .addField(`Reason`, `${reason}`, false)
 
     if (user) {
         if (member) {
-            if (reason) {
-            if (member.hasPermission('BAN_MEMBERS')) {
+            if (msg.member.hasPermission('BAN_MEMBERS')) {
+                if (!member.hasPermission('BAN_MEMBERS')) {
+                    member.ban({
+                        days: 0,
+                        reason: auditlog_reason,
+                    }).then(() => {
+                        guild.channels.find(f => f.id === '613783841869529094').send({ embed });
+                    }).catch(err => {
+                        console.error(err);
+                    });
+                } else {
+                    msg.react('👎');
+                    return;
+                };
+            } else {
                 msg.react('👎');
-                msg.channel.send(`This user is a mod/admin, I can't do that.`);
+                return;
             };
-            member.ban({days: 0, reason: `Responsible User: ${msg.author.tag} (${reason})`}).then(() => {
-            msg.react('👍');
-            console.log(bot.chalk.red(`[ GTFO ] ${user.tag} was banned by ${msg.author.tag}, ${reason}`));
-            }).catch(err => {
-                console.error(err);
-            });
-        }
-        }
-    }
-}};
+        };
+    } else {
+        const embedv2 = new MessageEmbed()
+            .addField(bot.firstUpper(this.help.name), this.help.description, false)
+            .addField('Usage', this.help.usage, true)
+            .addField('Example', this.help.example, true)
+            .setColor('TRANSPARENT')
+            .setFooter(msg.guild.name)
+        msg.channel.send({ embedv2 });
+        return;
+    };
+};
 
 exports.conf = {
     dev: false
@@ -50,6 +54,7 @@ exports.conf = {
 exports.help = {
     aliases: ['b', 'gtfo'],
     name: 'ban',
+    example: 'ban @flag stop spamming',
     category: '🔨 Moderation',
     description: 'Bans a user from the guild.',
     usage: 'ban [@user] [reason]'

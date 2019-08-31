@@ -2,16 +2,15 @@ const { MessageEmbed } = require('discord.js');
 
 exports.run = (bot, msg, args) => {
     if (!msg.member.hasPermission('MANAGE_ROLES')) {
-        msg.react(':thumbsdown:');
+        msg.react('👎');
         msg.channel.send(`You can't do that.`);
         
     } else {
-        
-    const role = msg.guild.roles.find(f => f.name === args.slice(1).join(' '));
-    const user = msg.mentions.users.first();
-    const member = msg.guild.member(user);
 
-    if (!user || !role) {
+    const argsv2 = msg.content.includes('true') || msg.content.includes('false');
+    const role = msg.guild.roles.find(f => f.name === args.slice(1).join(' '));
+
+    if (!argsv2 || !role) {
         const embed = new MessageEmbed()
             .addField(bot.firstUpper(this.help.name), this.help.description, false)
             .addField('Usage', this.help.usage, true)
@@ -20,30 +19,27 @@ exports.run = (bot, msg, args) => {
             .setFooter(msg.guild.name)
         msg.channel.send({ embed });
     };
-
-    if (user) {
-        if (member) {
-            if (role) {
-            member.roles.remove(`${role.id}`).then(() => {
+        if (msg.content.includes('true') && role) {
+            role.setHoist(true, `[${msg.author.tag}]`);
             msg.react('👍');
-            console.log(bot.chalk.red(`[ ROLE ] ${user.tag} was taken from ${role.name}, by ${msg.author.tag}`));
-            }).catch(err => {
-                console.error(err);
-            });
-        }
-        }
-    }
-}};
+        };
+
+        if (msg.content.includes('false') && role) {
+            role.setHoist(false, `[${msg.author.tag}]`);
+            msg.react('👍');
+        };
+    };
+};
 
 exports.conf = {
     dev: false
 }
 
 exports.help = {
-    aliases: ['rrole', 'removerole', 'takerole'],
-    name: 'delrole',
-    example: 'delrole @flag big dummy',
+    aliases: ['sethoist'],
+    name: 'hoist',
+    example: 'hoist true green',
     category: '🔨 Moderation',
-    description: 'Removes a role to user in the guild.',
-    usage: 'delrole [@user] [role]'
+    description: 'Sets the specified role hoisted or unhoisted.',
+    usage: 'hoist true or false [rolename]'
 }

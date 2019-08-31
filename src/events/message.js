@@ -2,9 +2,10 @@ module.exports = (bot, msg) => {
     if (msg.channel.type === 'dm') return;
     if (msg.content.indexOf(bot.config.prefix) !== 0) return;
 
-    const args = msg.content.split(' ').slice(1)
-    const command = msg.content.split(' ')[0].slice(bot.config.prefix.length).toLowerCase();
+    const args = msg.content.slice(bot.config.prefix.length).split(' ');
+    const command = args.shift().toLowerCase();
     let cmd;
+    
     if (bot.commands.has(command)) {
         cmd = bot.commands.get(command);
     } else if (bot.aliases.has(command)) {

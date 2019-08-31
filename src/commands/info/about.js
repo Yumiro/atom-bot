@@ -3,12 +3,12 @@ const { MessageEmbed} = require('discord.js');
 exports.run = async(bot, msg, args) => {
 
     var about = new MessageEmbed()
-        .setAuthor(`About Atom`, msg.guild.iconURL(), `https://discordapp.com/invite/eprUzer`)
-        .setColor(0x36393f)
-        .addField(`Changelog`, `- Added \`addrole\` \`clear\` \`delrole\`\n - Updated \`ban\` \`kick\``)
-        .addField(`Library`, `Made in Discord.js and with ❤️`)
-        .addField(`People`, `Main Developer - flag#0004\nHelper - Olykir#0911\nCool Boy - Zanxii#0056`)
-        .setFooter(`${bot.version}`, msg.author.displayAvatarURL())
+        .setAuthor(`About Atom Dev`, msg.guild.iconURL(), `https://discordapp.com/invite/eprUzer`)
+        .setColor('TRANSPARENT')
+        .addField(`Changelog`, `- Fixed a bunch of commands\n - Made many commands look better`)
+        .addField(`Library`, `Discord.js`)
+        .addField(`People`, `Main Developer - flag#2139\nHelper - Olykir#3966\nCool Boy - Zanxii#0056`)
+        .setFooter(`${bot.version}`, `https://cdn.discordapp.com/attachments/502648889728434176/608398619191803936/space.gif`)
         msg.channel.send(about);
 };
 

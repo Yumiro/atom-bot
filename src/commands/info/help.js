@@ -1,28 +1,23 @@
 const { MessageEmbed } = require('discord.js');
 
 exports.run = async(bot, msg, args) => {
-
-    function firstUpper(string) {
-        const first = string.split("")[0].toUpperCase()
-        const rest = string.split("").slice(1).join("")
-        return first + rest
-    }
-
     if (!args[0]) {
         const embed = new MessageEmbed()
-            .setColor(0x36393f)
+            .setColor('TRANSPARENT')
             .setFooter(msg.guild.name)
-            .setTitle(`Help`)
+            .setTitle('Help')
             if (bot.config.ownerID.includes(msg.author.id)) {
-                embed.addField(`:no_entry_sign: Owner`, `\`${bot.commands.filter(f => f.help.category === '🚫 Owner' && f.conf.hidden === false).map(f => f.help.name).join(`\` \``)}\``, true)
+                embed.addField(`:no_entry_sign: Owner`, `\`${bot.commands.filter(f => f.help.category === '🚫 Owner' && f.conf.hidden === false).map(f => f.help.name).join(` `)}\``, true)
             }
 
             if (msg.member.hasPermission('KICK_MEMBERS') && msg.member.hasPermission('BAN_MEMBERS') && msg.member.hasPermission('MANAGE_MESSAGES')) {
-                embed.addField(`:hammer: Moderation`, `\`${bot.commands.filter(f => f.help.category === '🔨 Moderation').map(f => f.help.name).join(`\` \``)}\``, true)
+                embed.addField(`:hammer: Moderation`, `\`${bot.commands.filter(f => f.help.category === '🔨 Moderation').map(f => f.help.name).join(` `)}\``, true)
             }
 
-                embed.addField(`:grey_question: Information`, `\`${bot.commands.filter(f => f.help.category === '❔ Info').map(f => f.help.name).join(`\` \``)}\``, true)
-            msg.channel.send(embed);
+                embed.addField(`:grey_question: Information`, `\`${bot.commands.filter(f => f.help.category === '❔ Info').map(f => f.help.name).join(` `)}\``, false)
+                embed.addField(`:joy: Fun`, `\`${bot.commands.filter(f => f.help.category === '😂 Fun').map(f => f.help.name).join(` `)}\``, true)
+            
+                msg.channel.send(embed);
     };
 
     if (args[0]) {
@@ -38,13 +33,12 @@ exports.run = async(bot, msg, args) => {
                 return;
             };
             var embed2 = new MessageEmbed()
-                .setColor(0x36393f)
+                .setColor('TRANSPARENT')
                 .setFooter(msg.guild.name)
-            //.setDescription(`Command: ${cmd.help.name}\nCategory: ${cmd.help.category}\nDescription: ${cmd.help.description}\nUsage: ${cmd.help.usage}\nDev: ${cmd.conf.dev ? true : false}`)
-            embed2.addField(`${firstUpper(cmd.help.name)}`, `${cmd.help.description}`, false)
-            embed2.addField(`Aliases`, `${cmd.help.aliases.sort().join(', ')}`, true)
-            embed2.addField(`Usage`, `${cmd.help.usage}`, true)
-            embed2.addField(`Group`, `${cmd.help.category}`, true)
+                .addField(`${bot.firstUpper(cmd.help.name)}`, `${cmd.help.description}`, false)
+                .addField(`Aliases`, `${cmd.help.aliases.sort().join(', ')}`, true)
+                .addField(`Usage`, `${cmd.help.usage}`, true)
+                .addField(`Group`, `${cmd.help.category}`, true)
             await msg.channel.send(embed2);
         } else {
             msg.react('👎');

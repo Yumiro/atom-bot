@@ -1,13 +1,18 @@
 const { MessageEmbed } = require('discord.js'); 
 
 exports.run = async(bot, msg, args) => {
-    var ping = await msg.channel.send('Pinging...').then(m => m.delete(1250));
-    var ping_number = ping.createdTimestamp
-    var ping_msg = await msg.channel.send('** **').then(m => m.edit({ embed: {
-        color: 0x36393f,
-        description: `:heartbeat: ${Math.round((bot.ws.ping))}ms\n\n:hourglass: ${Math.round((ping_number - msg.createdTimestamp))}ms`
-    }}
-    ));
+    const startTime = Date.now();
+    msg.channel.send('Pinging...').then(m => {
+      const restLatency = Date.now() - startTime;
+      m.edit('🏓 Pong!', { embed: {
+          color: 'TRANSPARENT',
+          description: `:heartbeat: ${Math.floor(restLatency)}ms\n\n:hourglass: ${Math.floor(bot.ws.ping)}ms`,
+          footer: {
+              name: msg.guild.name,
+              icon_url: ''
+          }
+        }});
+    });
 };
 
 exports.conf = {

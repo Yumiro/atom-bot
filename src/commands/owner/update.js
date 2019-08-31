@@ -11,12 +11,10 @@ exports.run = async(bot, msg, args) => {
             } else {
                 msg.react('👍')
                 console.log(stdout)
-            }
-        })
-    }   
-}
-
-
+            };
+        });
+    };
+};
 
 exports.conf = {
     dev: true,
