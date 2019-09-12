@@ -1,7 +1,7 @@
 {
-  "name": "ohbot",
-  "version": "0.0.1",
-  "description": "Yet another shitty bot",
+  "name": "atom",
+  "version": "1.0.0",
+  "description": "Yet another bot",
   "main": "bot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,6 +13,7 @@
     "chalk": "^2.4.2",
     "discord.js": "github:discordjs/discord.js",
     "enmap": "^5.0.1",
+    "git": "^0.1.5",
     "google": "^2.1.0",
     "moment": "^2.24.0",
     "moment-duration-format": "^2.3.2",
