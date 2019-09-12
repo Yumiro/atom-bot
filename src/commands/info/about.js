@@ -1,16 +1,17 @@
-const { MessageEmbed} = require('discord.js');
-const git = require('git');
+const {
+    MessageEmbed
+} = require('discord.js');
 
-exports.run = async(bot, msg, args) => {
+exports.run = async (bot, msg, args) => {
 
     var about = new MessageEmbed()
         .setAuthor(`About Atom`, msg.guild.iconURL(), `https://discordapp.com/invite/eprUzer`)
         .setColor('TRANSPARENT')
-        .addField(`Changelog`, `${git.Commit}`)
+        .addField(`Changelog`, `- Fix help command (yasu)\n- Fix update command (yasu)\n- Update restart command (Olykir)\n- Add auto-check for owner commands (Olykir)\n- Fix update command (yasu)`)
         .addField(`Library`, `Discord.js`)
         .addField(`People`, `Main Developer - ${bot.users.get('458659194707640321').tag}\nHelper - ${bot.users.get('621154191192096778').tag}\nCool Boy - ${bot.users.get('593510080528515072').tag}`)
         .setFooter(`${bot.version}`, `https://cdn.discordapp.com/attachments/502648889728434176/608398619191803936/space.gif`)
-        msg.channel.send(about);
+    msg.channel.send(about);
 };
 
 exports.conf = {
