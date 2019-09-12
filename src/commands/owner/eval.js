@@ -29,11 +29,7 @@ exports.run = (bot, msg, args) => {
                 msg.channel.send(`\`\`\`js\n${err}\n\`\`\``)
             });
         };
-} else {
-    msg.react('👎');
-}
-
-}
+} }
 
 exports.conf = {
     dev: true,
