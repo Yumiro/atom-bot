@@ -11,7 +11,6 @@ exports.run = async(bot, msg, args) => {
             };
         });
     };
-};
 
 exports.conf = {
     dev: true,
