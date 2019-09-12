@@ -4,10 +4,6 @@ const Discord = require('discord.js');
 exports.run = (bot, msg, args) => {
     this.bot = bot;
     
-    if (!bot.config.ownerID.includes(msg.author.id)) {
-        msg.react('👎');
-    };
-
     if (!args[0]) {
         msg.react('👎');
     };
@@ -33,7 +29,7 @@ exports.run = (bot, msg, args) => {
                 msg.channel.send(`\`\`\`js\n${err}\n\`\`\``)
             });
         };
-}};
+} }
 
 exports.conf = {
     dev: true,

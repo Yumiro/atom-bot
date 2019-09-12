@@ -14,5 +14,10 @@ module.exports = (bot, msg) => {
 
     if (!cmd) return;
 
-    cmd.run(bot, msg, args)
+        if (!bot.config.ownerID.includes(msg.author.id) && cmd.conf.dev) {
+        msg.react('👎');
+    } else {
+        cmd.run(bot, msg, args)    
+    }
+    
 }
