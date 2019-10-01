@@ -1,6 +1,8 @@
-const { MessageEmbed } = require('discord.js'); 
+const {
+    MessageEmbed
+} = require('discord.js');
 
-exports.run = async(bot, msg, args) => {
+exports.run = async (bot, msg, args) => {
     const roles = msg.guild.roles.map(f => f.id).slice(1).sort();
     const embed = new MessageEmbed()
         .setColor('TRANSPARENT')

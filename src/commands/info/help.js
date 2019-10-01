@@ -1,23 +1,25 @@
-const { MessageEmbed } = require('discord.js');
+const {
+    MessageEmbed
+} = require('discord.js');
 
-exports.run = async(bot, msg, args) => {
+exports.run = async (bot, msg, args) => {
     if (!args[0]) {
         const embed = new MessageEmbed()
             .setColor('TRANSPARENT')
             .setFooter(msg.guild.name)
             .setTitle('Help')
-            if (bot.config.ownerID.includes(msg.author.id)) {
-                embed.addField(`:no_entry_sign: Owner`, `\`${bot.commands.filter(f => f.help.category === '🚫 Owner' && f.conf.hidden === false).map(f => f.help.name).join(`\` \``)}\``, true)
-            }
+        if (bot.config.ownerID.includes(msg.author.id)) {
+            embed.addField(`:no_entry_sign: Owner`, `\`${bot.commands.filter(f => f.help.category === '🚫 Owner' && f.conf.hidden === false).map(f => f.help.name).join(`\` \``)}\``, true)
+        }
 
-            if (msg.member.hasPermission('KICK_MEMBERS') && msg.member.hasPermission('BAN_MEMBERS') && msg.member.hasPermission('MANAGE_MESSAGES')) {
-                embed.addField(`:hammer: Moderation`, `\`${bot.commands.filter(f => f.help.category === '🔨 Moderation').map(f => f.help.name).join(`\` \``)}\``, true)
-            }
+        if (msg.member.hasPermission('KICK_MEMBERS') && msg.member.hasPermission('BAN_MEMBERS') && msg.member.hasPermission('MANAGE_MESSAGES')) {
+            embed.addField(`:hammer: Moderation`, `\`${bot.commands.filter(f => f.help.category === '🔨 Moderation').map(f => f.help.name).join(`\` \``)}\``, true)
+        }
 
-                embed.addField(`:grey_question: Information`, `\`${bot.commands.filter(f => f.help.category === '❔ Info').map(f => f.help.name).join(`\` \``)}\``, false)
-                embed.addField(`:joy: Fun`, `\`${bot.commands.filter(f => f.help.category === '😂 Fun').map(f => f.help.name).join(`\` \``)}\``, true)
-            
-                msg.channel.send(embed);
+        embed.addField(`:grey_question: Information`, `\`${bot.commands.filter(f => f.help.category === '❔ Info').map(f => f.help.name).join(`\` \``)}\``, false)
+        embed.addField(`:joy: Fun`, `\`${bot.commands.filter(f => f.help.category === '😂 Fun').map(f => f.help.name).join(`\` \``)}\``, true)
+
+        msg.channel.send(embed);
     };
 
     if (args[0]) {

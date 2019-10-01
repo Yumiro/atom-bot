@@ -1,7 +1,11 @@
-const { MessageEmbed } = require('discord.js');
+const {
+    MessageEmbed
+} = require('discord.js');
 
 exports.run = (bot, msg, args) => {
-    const { guild } = msg.channel;
+    const {
+        guild
+    } = msg.channel;
     const argsv2 = msg.content.split(' ').slice(1);
     const user = msg.mentions.users.first();
     const member = guild.member(user);
@@ -22,7 +26,9 @@ exports.run = (bot, msg, args) => {
                         days: 0,
                         reason: auditlog_reason,
                     }).then(() => {
-                        guild.channels.find(f => f.id === '613783841869529094').send({ embed });
+                        guild.channels.find(f => f.id === '613783841869529094').send({
+                            embed
+                        });
                     }).catch(err => {
                         console.error(err);
                     });
@@ -42,7 +48,9 @@ exports.run = (bot, msg, args) => {
             .addField('Example', this.help.example, true)
             .setColor('TRANSPARENT')
             .setFooter(msg.guild.name)
-        msg.channel.send({ embedv2 });
+        msg.channel.send({
+            embedv2
+        });
         return;
     };
 };

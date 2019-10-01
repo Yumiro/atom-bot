@@ -1,9 +1,11 @@
-exports.run = async(bot, msg, args) => {
+exports.run = async (bot, msg, args) => {
     const bans = await msg.guild.fetchBans();
-    await msg.channel.send({ embed: {
-        color: 'TRANSPARENT',
-        description: `:hammer: ${bans.size} ${bans.size < 2 ? 'ban' : 'bans'}`
-    }});
+    await msg.channel.send({
+        embed: {
+            color: 'TRANSPARENT',
+            description: `:hammer: ${bans.size} ${bans.size < 2 ? 'ban' : 'bans'}`
+        }
+    });
 };
 
 exports.conf = {

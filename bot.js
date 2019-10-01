@@ -13,6 +13,7 @@ const chalk = require('chalk');
 const {
   readdir
 } = require('fs');
+const rbx = require("noblox.js");
 const folders = ['fun', 'info', 'moderation', 'owner'];
 
 this.bot = bot;

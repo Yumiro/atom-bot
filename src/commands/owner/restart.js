@@ -1,6 +1,6 @@
-exports.run = async(bot, msg, args) => {
-        msg.react('👍').then(() => { 
-            process.exit();
+exports.run = async (bot, msg, args) => {
+    msg.react('👍').then(() => {
+        process.exit();
     });
 };
 

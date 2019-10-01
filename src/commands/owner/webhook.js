@@ -1,6 +1,9 @@
-const { WebhookClient } = require('discord.js');
-exports.run = async(bot, msg, args) => {
-    const Hook = new WebhookClient(`614792316145631235`, `7IRjEHkEer9jPleNohDxkziA5TNWsldJ7KGYlvby3NlZp7juW3q8ayFx2_jObwrdb7Wj`);
+const {
+    WebhookClient
+} = require('discord.js');
+exports.run = async (bot, msg, args) => {
+    const Hook = new WebhookClient(`614792316145631235`,
+        `7IRjEHkEer9jPleNohDxkziA5TNWsldJ7KGYlvby3NlZp7juW3q8ayFx2_jObwrdb7Wj`);
     if (bot.config.ownerID.includes(msg.author.id)) {
         msg.delete();
         Hook.send(args.join(' '));

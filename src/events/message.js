@@ -5,7 +5,7 @@ module.exports = (bot, msg) => {
     const args = msg.content.slice(bot.config.prefix.length).split(' ');
     const command = args.shift().toLowerCase();
     let cmd;
-    
+
     if (bot.commands.has(command)) {
         cmd = bot.commands.get(command);
     } else if (bot.aliases.has(command)) {
@@ -17,7 +17,7 @@ module.exports = (bot, msg) => {
     if (!bot.config.ownerID.includes(msg.author.id) && cmd.conf.dev) {
         msg.react('👎');
     } else {
-        cmd.run(bot, msg, args)    
+        cmd.run(bot, msg, args)
     }
-    
+
 }

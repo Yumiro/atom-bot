@@ -1,6 +1,8 @@
-const { MessageEmbed } = require('discord.js');
+const {
+    MessageEmbed
+} = require('discord.js');
 
-exports.run = async(bot, msg, args) => {
+exports.run = async (bot, msg, args) => {
     const av = new MessageEmbed()
         .setColor('TRANSPARENT')
         .setImage(msg.author.displayAvatarURL())

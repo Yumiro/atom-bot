@@ -7,16 +7,18 @@ module.exports = (bot, msg) => {
         return;
     } else {
 
-    bot.guilds.find(f => f.name === 'atom/dev').channels.find(f => f.id === '613783535630680076').send({ embed: {
-        color: 'TRANSPARENT',
-        title: 'Message Deleted',
-        fields: [{
-            name: `User`,
-            value: `${msg.author.tag} (${msg.author.id})`
-        }, {
-            name: `Message`,
-            value: `${msg.cleanContent}`
-        }]
-    }});
-}
+        bot.guilds.find(f => f.name === 'atom/dev').channels.find(f => f.id === '613783535630680076').send({
+            embed: {
+                color: 'TRANSPARENT',
+                title: 'Message Deleted',
+                fields: [{
+                    name: `User`,
+                    value: `${msg.author.tag} (${msg.author.id})`
+                }, {
+                    name: `Message`,
+                    value: `${msg.cleanContent}`
+                }]
+            }
+        });
+    }
 }

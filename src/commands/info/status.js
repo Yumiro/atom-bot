@@ -1,8 +1,10 @@
-const { MessageEmbed} = require('discord.js');
+const {
+    MessageEmbed
+} = require('discord.js');
 const moment = require('moment');
 require('moment-duration-format');
 
-exports.run = async(bot, msg, args) => {
+exports.run = async (bot, msg, args) => {
     const duration = moment.duration(bot.uptime).format('D[d], H[h], m[m], s[s]');
 
     var status = new MessageEmbed()
@@ -15,7 +17,7 @@ exports.run = async(bot, msg, args) => {
         .addField(`Servers`, `${bot.guilds.size} servers`, true)
         .addField(`Channels`, `${bot.channels.size} channels`, true)
         .addField(`Users`, `${bot.users.size - 1} users`, true)
-        msg.channel.send(status);
+    msg.channel.send(status);
 };
 
 exports.conf = {

@@ -1,7 +1,11 @@
-const { MessageEmbed } = require('discord.js');
+const {
+    MessageEmbed
+} = require('discord.js');
 
 exports.run = (bot, msg, args) => {
-    const { guild } = msg.channel;
+    const {
+        guild
+    } = msg.channel;
     const argsv2 = msg.content.split(' ').slice(1);
     const user = msg.mentions.users.first();
     const member = guild.member(user);

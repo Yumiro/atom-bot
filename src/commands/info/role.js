@@ -1,7 +1,9 @@
-const { MessageEmbed } = require('discord.js');
+const {
+    MessageEmbed
+} = require('discord.js');
 const moment = require('moment');
 
-exports.run = async(bot, msg, args) => {
+exports.run = async (bot, msg, args) => {
     const argsv2 = msg.content.split(' ').splice(1).join(' ');
 
     if (argsv2) {
@@ -23,8 +25,10 @@ exports.run = async(bot, msg, args) => {
         if (role.permissions.serialize().ADMINISTRATOR) {
             embed.setFooter('Members with this role have every permission and can bypass any channel specific permissions')
         };
-        
-        msg.channel.send({ embed });
+
+        msg.channel.send({
+            embed
+        });
     } else {
         const emb = new MessageEmbed()
             .addField(bot.firstUpper(this.help.name), this.help.description, false)

@@ -1,16 +1,18 @@
-const { exec } = require('child_process');
-exports.run = async(bot, msg, args) => {
-        exec('git pull', {
-            cwd: __dirname
-        }, (err, stdout, stderr) => {
-            if(err) {
-                console.error(err);
-            } else {
-                msg.react('👍');
-                console.log(stdout);
-            };
-        });
-    };
+const {
+    exec
+} = require('child_process');
+exports.run = async (bot, msg, args) => {
+    exec('git pull', {
+        cwd: __dirname
+    }, (err, stdout, stderr) => {
+        if (err) {
+            console.error(err);
+        } else {
+            msg.react('👍');
+            console.log(stdout);
+        };
+    });
+};
 
 exports.conf = {
     dev: true,
