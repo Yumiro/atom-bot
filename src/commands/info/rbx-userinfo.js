@@ -23,7 +23,7 @@ exports.run = async (bot, msg, args) => {
                         .addField("Account Age", `${info.age} days old` || 'Unresolvable')
                         .addField("Register Date", `${dateInfo.month}/${dateInfo.day}/${dateInfo.year}` || 'Unresolvable')
                         .addField("User Link", `https://roblox.com/users/${id}/profile`)
-                    message.channel.send({
+                    msg.channel.send({
                         embed
                     })
                 })
