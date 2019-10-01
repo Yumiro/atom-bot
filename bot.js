@@ -27,6 +27,16 @@ bot.firstUpper = function firstUpper(string) {
   const rest = string.split("").slice(1).join("");
   return first + rest
 };
+bot.extractDate = (dateObj) => {
+  let month = dateObj.getMonth()
+  let day = dateObj.getDate()
+  let year = dateObj.getFullYear()
+  return {
+    month: month + 1,
+    day: day,
+    year: year
+  }
+}
 
 readdir("./src/events/", (err, files) => {
   if (err) {
