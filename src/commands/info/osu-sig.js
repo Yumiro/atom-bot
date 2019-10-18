@@ -15,6 +15,10 @@ exports.run = async (bot, msg, args) => {
         remove_avatar_margin: false,
         flag_shadow: false,
         flag_stroke: true,
+        opaque_avatar: false,
+        dark_triangles: false,
+        dark_header: false,
+        replace_playcount_with_scorecount: false,
         xp_bar: true,
         xp_color: true
     }))
