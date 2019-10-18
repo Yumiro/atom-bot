@@ -5,7 +5,7 @@ const sig = require('osunext-sig');
 
 
 exports.run = async (bot, msg, args) => {
-    msg.channel.send(sig(args, {
+    msg.channel.send(sig(`${args}`, {
         color: '#7289da',
         game_mode: 0,
         pp_display: 1,
