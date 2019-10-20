@@ -29,7 +29,7 @@ exports.run = (bot, msg, args) => {
             if (member) {
                 if (role) {
                     member.roles.remove(`${role.id}`).then(() => {
-                        msg.react('👍');
+                        msg.channel.send('ok, done').then(m => m.delete(1000));
                         console.log(bot.chalk.red(`[ ROLE ] ${user.tag} was taken from ${role.name}, by ${msg.author.tag}`));
                     }).catch(err => {
                         console.error(err);

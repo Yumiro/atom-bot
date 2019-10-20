@@ -25,12 +25,12 @@ exports.run = (bot, msg, args) => {
         };
         if (msg.content.includes('true') && role) {
             role.setHoist(true, `[${msg.author.tag}]`);
-            msg.react('👍');
+            msg.channel.send('ok, done').then(m => m.delete(1000));
         };
 
         if (msg.content.includes('false') && role) {
             role.setHoist(false, `[${msg.author.tag}]`);
-            msg.react('👍');
+            msg.channel.send('ok, done').then(m => m.delete(1000));
         };
     };
 };

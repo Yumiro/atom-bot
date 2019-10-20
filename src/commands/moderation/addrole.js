@@ -29,7 +29,7 @@ exports.run = (bot, msg, args) => {
             if (member) {
                 if (role) {
                     member.roles.add(`${role.id}`).then(() => {
-                        msg.react('👍');
+                        msg.channel.send('ok, done').then(m => m.delete(1000));
                         console.log(bot.chalk.green(`[ ROLE ] ${user.tag} was given ${role.name}, by ${msg.author.tag}`));
                     }).catch(err => {
                         console.error(err);

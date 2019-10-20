@@ -35,11 +35,12 @@ exports.run = async (bot, msg, args) => {
                 bot.guilds.find(f => f.name === 'atom/dev').channels.find(f => f.id === '613783841869529094').send({
                     embed
                 });
+                msg.channel.send('ok, done').then(m => m.delete(1000));
             }).catch(err => {
                 console.error(err);
             });
         } else {
-            msg.channel.send(`Select a number between 1 - 100.`)
+            msg.channel.send(`has to be a number between 1 and 100, dummy`).then(m => m.delete(5000));
         }
     }
 };
