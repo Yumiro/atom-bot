@@ -1,16 +1,23 @@
 const {
     MessageEmbed
 } = require('discord.js');
+const req = require('node-superfetch');
 
 exports.run = async (bot, msg, args) => {
 
+    const { body } = await req.get('https://api.github.com/repos/Yumiro/atom69/commits')
     var about = new MessageEmbed()
         .setAuthor(`About Atom`, msg.guild.iconURL(), `https://discordapp.com/invite/eprUzer`)
         .setColor('TRANSPARENT')
-        .addField(`Changelog`, `- Instead of reacting to the message, send text and delete after 1 second, success (flag)\n- Instead of reacting to the message, send text and delete after 3 seconds, error (flag)\n- Update bot version to \`2.0.0-stable-bronze\` (flag)`)
+        .setTitle('Changelog')
+        .addField(`\`${body[0].sha.substring(0, 7)}\` ${body[0].commit.message}`, body[0].commit.author.name)
+        .addField(`\`${body[1].sha.substring(0, 7)}\` ${body[0].commit.message}`, body[1].commit.author.name)
+        .addField(`\`${body[2].sha.substring(0, 7)}\` ${body[0].commit.message}`, body[2].commit.author.name)
+        .addField(`\`${body[3].sha.substring(0, 7)}\` ${body[0].commit.message}`, body[3].commit.author.name)
+        .addField(`\`${body[4].sha.substring(0, 7)}\` ${body[0].commit.message}`, body[4].commit.author.name)
         .addField(`Library`, `Discord.js`)
         .addField(`People`, `Main Developer - ${bot.users.get('458659194707640321').tag}\nHelper - ${bot.users.get('621154191192096778').tag}\nCool Boy - ${bot.users.get('593510080528515072').tag}`)
-        .setFooter(`${bot.version}`, `https://cdn.discordapp.com/attachments/502648889728434176/608398619191803936/space.gif`)
+        .setFooter(`${bot.version} | Thanks Oly for the changelog part`, `https://cdn.discordapp.com/attachments/502648889728434176/608398619191803936/space.gif`)
     msg.channel.send(about);
 };
 
