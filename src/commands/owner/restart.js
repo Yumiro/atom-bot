@@ -1,5 +1,5 @@
 exports.run = async (bot, msg, args) => {
-    msg.channel.send(`ok`).then(m => {
+    msg.channel.send(`ok`).then(async (m) => {
         await process.exit();
         m.delete(1000);
     });
