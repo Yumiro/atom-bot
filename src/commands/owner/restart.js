@@ -1,6 +1,7 @@
 exports.run = async (bot, msg, args) => {
-    msg.react('👍').then(() => {
-        process.exit();
+    msg.channel.send(`ok`).then(m => {
+        await process.exit();
+        m.delete(1000);
     });
 };
 

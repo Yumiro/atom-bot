@@ -7,7 +7,7 @@ exports.run = (bot, msg, args) => {
     this.bot = bot;
 
     if (!args[0]) {
-        msg.react('👎');
+        msg.channel.send(`where's the code, dummy`).then(m => m.delete(3000));
     };
 
     if (args[0]) {
