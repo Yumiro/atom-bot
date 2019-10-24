@@ -9,8 +9,6 @@ exports.run = async (bot, msg, args) => {
     var about = new MessageEmbed()
         .setAuthor(`Changelog`, msg.guild.iconURL(), `https://discordapp.com/invite/eprUzer`)
         .setColor('TRANSPARENT')
-        .addField(`Showing latest 5 commits`, `** **`)
-        .addBlankField()
         .addField(`Commit \`${body[0].sha.substring(0, 7)}\` (${body[0].commit.author.name})`, `${body[0].commit.message}`)
         .addField(`Commit \`${body[1].sha.substring(0, 7)}\` (${body[1].commit.author.name})`, `${body[1].commit.message}`)
         .addField(`Commit \`${body[2].sha.substring(0, 7)}\` (${body[2].commit.author.name})`, `${body[2].commit.message}`)
@@ -18,7 +16,7 @@ exports.run = async (bot, msg, args) => {
         .addField(`Commit \`${body[4].sha.substring(0, 7)}\` (${body[4].commit.author.name})`, `${body[4].commit.message}`)
         .addField(`Library`, `Discord.js`)
         .addField(`People`, `Main Developer - ${bot.users.get('458659194707640321').tag}\nDeveloper - ${bot.users.get('621154191192096778').tag}\nCool Boy - ${bot.users.get('593510080528515072').tag}`)
-        .setFooter(`${bot.version} | Thanks Oly for the changelog part`, `https://cdn.discordapp.com/attachments/502648889728434176/608398619191803936/space.gif`)
+        .setFooter(`${bot.version} • latest 5 commits • ty oly for the get commits code`, `https://cdn.discordapp.com/attachments/502648889728434176/608398619191803936/space.gif`)
     msg.channel.send(about);
 };
 
