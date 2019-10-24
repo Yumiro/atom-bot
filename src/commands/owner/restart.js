@@ -1,6 +1,7 @@
 exports.run = async (bot, msg, args) => {
-    process.exit();
-    await msg.channel.send('ok').then(m => m.delete(2000));
+    process.exit().then(() => {
+        msg.channel.send('ok').then(m => m.delete(2000));
+    });
 };
 
 exports.conf = {
