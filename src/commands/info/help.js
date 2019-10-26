@@ -37,7 +37,7 @@ exports.run = async (bot, msg, args) => {
             var embed2 = new MessageEmbed()
                 .setColor('TRANSPARENT')
                 .setFooter(msg.guild.name)
-                .addField(`${bot.firstUpper(cmd.help.name)}`, `${cmd.help.description}`, false)
+                .addField(firstUpper(cmd.help.name), cmd.help.description, false)
                 .addField(`Aliases`, `${cmd.help.aliases.sort().join(', ')}`, true)
                 .addField(`Usage`, `${cmd.help.usage}`, true)
                 .addField(`Group`, `${cmd.help.category}`, true)

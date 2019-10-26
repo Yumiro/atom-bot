@@ -20,7 +20,7 @@ exports.run = async (bot, msg, args) => {
 
         if (!number) {
             const embedv2 = new MessageEmbed()
-                .addField(bot.firstUpper(this.help.name), this.help.description, false)
+                .addField(firstUpper(this.help.name), this.help.description, false)
                 .addField('Usage', this.help.usage, true)
                 .addField('Example', this.help.example, true)
                 .setColor('TRANSPARENT')

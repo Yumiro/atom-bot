@@ -31,7 +31,7 @@ exports.run = async (bot, msg, args) => {
         });
     } else {
         const emb = new MessageEmbed()
-            .addField(bot.firstUpper(this.help.name), this.help.description, false)
+            .addField(firstUpper(this.help.name), this.help.description, false)
             .addField('Usage', this.help.usage, true)
             .addField('Example', this.help.example, true)
             .setColor('TRANSPARENT')

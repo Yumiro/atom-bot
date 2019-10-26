@@ -22,12 +22,12 @@ bot.aliases = new Collection();
 bot.config = config;
 bot.chalk = chalk;
 bot.version = '2.1.3-stable-bronze';
-bot.firstUpper = function firstUpper(string) {
+global.firstUpper = function firstUpper(string) {
   const first = string.split("")[0].toUpperCase();
   const rest = string.split("").slice(1).join("");
   return first + rest
 };
-bot.extractDate = (dateObj) => {
+global.extractDate = (dateObj) => {
   let month = dateObj.getMonth()
   let day = dateObj.getDate()
   let year = dateObj.getFullYear()
