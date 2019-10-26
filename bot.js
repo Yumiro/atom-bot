@@ -21,7 +21,7 @@ bot.commands = new Collection();
 bot.aliases = new Collection();
 bot.config = config;
 bot.chalk = chalk;
-bot.version = '2.1.3-stable-bronze';
+bot.version = '2.1.8-stable-bronze';
 global.firstUpper = function firstUpper(string) {
   const first = string.split("")[0].toUpperCase();
   const rest = string.split("").slice(1).join("");
@@ -36,7 +36,8 @@ global.extractDate = (dateObj) => {
     day: day,
     year: year
   }
-}
+};
+global.isEmmaCute = true;
 
 readdir("./src/events/", (err, files) => {
   if (err) {
