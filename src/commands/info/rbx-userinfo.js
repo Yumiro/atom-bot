@@ -26,6 +26,16 @@ exports.run = async (bot, msg, args) => {
                         embed
                     })
                 })
+            } else {
+                const embed = new MessageEmbed()
+                .addField(bot.firstUpper(this.help.name), this.help.description, false)
+                .addField('Usage', this.help.usage, true)
+                .addField('Example', this.help.example, true)
+                .setColor('TRANSPARENT')
+                .setFooter(msg.guild.name)
+                msg.channel.send({
+                    embed
+                });
             }
         })
     }

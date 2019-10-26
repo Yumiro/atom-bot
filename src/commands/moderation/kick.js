@@ -26,16 +26,16 @@ exports.run = (bot, msg, args) => {
                             .addField(`User`, `${user.tag} (${user.id})`, false)
                             .addField(`Reason`, `${reason}`, false)
                         guild.channels.find(f => f.id === '613783841869529094').send(embed);
-                        msg.channel.send('goodbye').then(m => m.delete(1000));
+                        msg.channel.send('goodbye');
                     }).catch(err => {
                         console.error(err);
                     });
                 } else {
-                    msg.channel.send('oops, something went wrong').then(m => m.delete(3000));
+                    msg.channel.send('oops, something went wrong');
                     return;
                 };
             } else {
-                msg.channel.send('oops, something went wrong').then(m => m.delete(3000));
+                msg.channel.send('oops, something went wrong');
                 return;
             };
         };

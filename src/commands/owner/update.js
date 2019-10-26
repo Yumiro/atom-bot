@@ -8,7 +8,7 @@ exports.run = async (bot, msg, args) => {
         if (err) {
             console.error(err);
         } else {
-            msg.channel.send(`ok`).then(m => m.delete(2000));
+            msg.channel.send(`ok`);
             console.log(stdout);
         };
     });
