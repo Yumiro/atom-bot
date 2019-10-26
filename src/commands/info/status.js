@@ -12,11 +12,12 @@ exports.run = async (bot, msg, args) => {
         .setFooter(msg.guild.name)
         .setTitle(`Bot Status`)
         .addField(`Memory Usage`, `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB`, true)
-        .addField(`Uptime`, `${duration}`, true)
-        .addField(`Commands`, `${bot.commands.size}`, true)
-        .addField(`Servers`, `${bot.guilds.size}`, true)
-        .addField(`Channels`, `${bot.channels.size}`, true)
-        .addField(`Users`, `${bot.users.size - 1}`, true)
+        .addField(`Uptime`, duration, true)
+        .addField(`Commands`, bot.commands.size, true)
+        .addField(`Servers`, bot.guilds.size, true)
+        .addField(`Channels`, bot.channels.size, true)
+        .addField(`Users`, bot.users.size - 1, true)
+        .addField(`Version`, bot.version, true)
     msg.channel.send(status);
 };
 
