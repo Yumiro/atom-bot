@@ -9,7 +9,7 @@ exports.run = async (bot, msg, args) => {
             if (id) {
                 rbx.getPlayerInfo(parseInt(id)).then(function(info) {
                     let date = new Date(info.joinDate)
-                    let dateInfo = bot.extractDate(date)
+                    let dateInfo = extractDate(date)
                     let embed = new MessageEmbed()
                     .setColor("#f9ae00")
                     .setURL(`https://roblox.com/users/${id}/profile`)
