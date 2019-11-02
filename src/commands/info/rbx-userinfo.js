@@ -48,5 +48,6 @@ exports.help = {
     name: 'rbx-userinfo',
     category: '❔ Info',
     description: 'Sends information about a specific Roblox user.',
+    example: 'rbx-userinfo FlagOfTheObby',
     usage: 'rbx-userinfo [user name]'
 }
