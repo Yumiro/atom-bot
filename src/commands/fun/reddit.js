@@ -44,7 +44,7 @@ exports.conf = {
 }
 
 exports.help = {
-    aliases: ['r'],
+    aliases: ['sub'],
     name: 'reddit',
     category: '😂 Fun',
     description: 'Sends the top posts from a specified subreddit.',
