@@ -12,7 +12,7 @@ exports.run = async (bot, msg, args) => {
                 var random = Math.floor(Math.random() * (75 - 2 + 1) + 1);
                 var subreddit = res.body.data.children[random].data.title;
                 const embed = new MessageEmbed()
-                    .setTitle(args)
+                    .setTitle(firstUpper(args))
                     .setDescription(subreddit)
                     .setColor('TRANSPARENT')
                     .setImage(res.body.data.children[random].data.url)
