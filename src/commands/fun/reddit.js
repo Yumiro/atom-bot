@@ -14,8 +14,8 @@ exports.run = async (bot, msg, args) => {
                 .setTitle(args)
                 .setDescription(subreddit)
                 .setColor('TRANSPARENT')
-                .setImage(res.body.data.url)
-                .setFooter(`${res.body.data.ups}⬆  ${res.body.data.downs}⬇`)
+                .setImage(res.body.data.children[random].url)
+                .setFooter(`${res.body.data.children[random].ups}⬆  ${res.body.data.children[random].downs}⬇`)
             msg.channel.send({
                 embed
             });
