@@ -11,7 +11,7 @@ exports.run = async (bot, msg, args) => {
     let thumbnails;
     let messages;
     let titles;
-    await req.get(redditUrl).then(body => {
+    await req.get(`${redditUrl}`).then(body => {
         thumbnails = body.data.children[0].data.thumbnail;
         titles = body.data.children[0].data.title;
         message = body.data.children[0].data.permalink;
