@@ -6,12 +6,11 @@ const {
 } = require('node-superfetch');
 
 exports.run = async (bot, msg, args) => {
-    let redditUrl = `https://www.reddit.com/r/${args[0]}/top.json?t=${args[1]}`;
 
     let thumbnails;
     let messages;
     let titles;
-    await req.get(`${redditUrl}`).then(body => {
+    await req.get(`https://www.reddit.com/r/${args[0]}/top.json?t=${args[1]}`).then(body => {
         thumbnails = body.data.children[0].data.thumbnail;
         titles = body.data.children[0].data.title;
         message = body.data.children[0].data.permalink;
