@@ -16,7 +16,7 @@ exports.run = async (bot, msg, args) => {
         const embed = new MessageEmbed()
             .addField(firstUpper(this.help.name), this.help.description, false)
             .addField('Usage', this.help.usage, true)
-            .addField('Example', this.help.description, true)
+            .addField('Example', this.help.example, true)
             .setColor('TRANSPARENT')
             .setFooter(msg.guild.name)
         msg.channel.send({
