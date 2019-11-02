@@ -21,18 +21,6 @@ exports.run = async (bot, msg, args) => {
             });
         };
     });
-
-    if (!args) {
-        const embedv2 = new MessageEmbed()
-            .addField(firstUpper(this.help.name), this.help.description, false)
-            .addField('Usage', this.help.usage, true)
-            .addField('Example', this.help.example, true)
-            .setColor('TRANSPARENT')
-            .setFooter(msg.guild.name)
-        msg.channel.send({
-            embedv2
-        });
-    }
 };
 
 exports.conf = {
