@@ -1,5 +1,5 @@
 module.exports = (bot, msg, member) => {
-    const channel = member.guild.channels.find(f => f.id === '602575181990330383');
+    const channel = member.guild.channels.find(f => f.name === 'member    logging');
     let replies = [
         `Challenger approaching - ${member} has appeared!`,
         `It's dangerous to go alone, take ${member}!`,
