@@ -4,7 +4,15 @@ const {
 
 exports.run = async (bot, msg, args) => {
 
-    if (!args) {
+    if (args) {
+        msg.channel.send(
+            new MessageEmbed()
+            .setColor('TRANSPARENT')
+            .setImage(`https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(args)}`)
+        );
+
+    } else {
+
         const embed = new MessageEmbed()
             .addField(firstUpper(this.help.name), this.help.description, false)
             .addField('Usage', this.help.usage, true)
@@ -14,13 +22,6 @@ exports.run = async (bot, msg, args) => {
         msg.channel.send({
             embed
         });
-    } else {
-
-        msg.channel.send(
-            new MessageEmbed()
-            .setColor('TRANSPARENT')
-            .setImage(`https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(args)}`)
-        );
 
     }
 };
