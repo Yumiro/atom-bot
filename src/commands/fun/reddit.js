@@ -2,8 +2,8 @@ const {
     MessageEmbed
 } = require('discord.js');
 const {
-    req
-} = require('node-superfetch');
+    req 
+} = require('snekfetch');
 
 exports.run = async (bot, msg, args) => {
 
