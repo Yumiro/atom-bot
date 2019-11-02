@@ -2,7 +2,7 @@ const {
     MessageEmbed
 } = require('discord.js');
 const {
-    req 
+    req
 } = require('snekfetch');
 
 exports.run = async (bot, msg, args) => {
