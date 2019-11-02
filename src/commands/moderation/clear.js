@@ -4,8 +4,7 @@ const {
 
 exports.run = async (bot, msg, args) => {
     if (!msg.member.hasPermission('MANAGE_MESSAGES')) {
-        msg.react(':thumbsdown:');
-        msg.channel.send(`You can't do that.`);
+        msg.channel.send(`you can't do that`);
 
     } else {
 

@@ -37,7 +37,7 @@ global.extractDate = (dateObj) => {
     year: year
   }
 };
-global.isEmmaCute = true;
+global.isEmmaCute = 'yes, very';
 
 readdir("./src/events/", (err, files) => {
   if (err) {

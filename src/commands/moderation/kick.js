@@ -31,11 +31,11 @@ exports.run = (bot, msg, args) => {
                         console.error(err);
                     });
                 } else {
-                    msg.channel.send('oops, something went wrong');
+                    msg.channel.send(`you can't do that, this user has the ability to also kick members`);
                     return;
                 };
             } else {
-                msg.channel.send('oops, something went wrong');
+                msg.channel.send(`you can't do that`);
                 return;
             };
         };
