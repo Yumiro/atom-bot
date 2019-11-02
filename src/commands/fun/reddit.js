@@ -11,10 +11,10 @@ exports.run = async (bot, msg, args) => {
             var random = Math.floor(Math.random() * (75 - 2 + 1) + 1);
             var subreddit = res.body.data.children[random].data.title;
             const embed = new MessageEmbed()
-                .setTitle(args)
+                .setTitle(`[https://www.reddit.com/r/${args}/${subreddit}](${args})`)
                 .setDescription(subreddit)
                 .setColor('TRANSPARENT')
-                .setImage(res.body.data.children[random].data.url ? res.body.data.children[random].data.url : null)
+                .setImage(res.body.data.children[random].data.url)
                 .setFooter(`${res.body.data.children[random].data.ups} Upvotes • ${res.body.data.children[random].data.downs} Downvotes`)
             msg.channel.send({
                 embed
