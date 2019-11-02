@@ -10,11 +10,18 @@ exports.run = async (bot, msg, args) => {
         if (!err && res.ok) {
             var random = Math.floor(Math.random() * (75 - 2 + 1) + 1);
             var subreddit = res.body.data.children[random].data.title;
+            
+            let url = res.body.data.children[random].data.url;
+
+            if (!url) {
+                url = 'http://1x1px.me/FFFFFF-0.png'
+            };
+
             const embed = new MessageEmbed()
                 .setTitle(args)
                 .setDescription(subreddit)
                 .setColor('TRANSPARENT')
-                .setImage(res.body.data.children[random].data.url ? res.body.data.children[random].data.url : 'http://1x1px.me/FFFFFF-0.png')
+                .setImage(url)
                 .setFooter(`${res.body.data.children[random].data.ups} Upvotes • ${res.body.data.children[random].data.downs} Downvotes`)
             msg.channel.send({
                 embed
