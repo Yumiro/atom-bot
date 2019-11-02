@@ -35,5 +35,5 @@ module.exports = (bot, msg, member) => {
         `Always gonna give ${member} up. Always gonna let ${member} down, because they left.`,
     ];
     let result = Math.floor(Math.random() * replies.length);
-    channel.send(`${replies[result]}`);
+    channel.send(`oop`);
 }
