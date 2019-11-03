@@ -1,10 +1,10 @@
 const {
     MessageEmbed
 } = require('discord.js');
-const { get } = require('snekfetch');
+const snekfetch = require('snekfetch');
 
 exports.run = async (bot, msg, args) => {
-    const { body } = get(`http://numbersapi.com/${args}/trivia`)
+    const { body } = snekfetch.get(`http://numbersapi.com/${args}/trivia`)
 
     const embed = new MessageEmbed()
         .setDescription(body)
@@ -22,7 +22,7 @@ exports.help = {
     aliases: ['number-fact', 'number-facts', 'numberfact', 'numberfacts', 'num-fact', 'num-facts', 'numfacts'],
     name: 'numfact',
     category: '😂 Fun',
-    description: 'Sends a random fact about a specified number :four:',
+    description: 'Sends a random fact about a specified number :six:',
     example: 'numfact 42',
     usage: 'numfact [number]'
 }
