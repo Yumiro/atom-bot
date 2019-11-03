@@ -13,22 +13,20 @@ exports.run = async (bot, msg, args) => {
             var url = res.body.data.children[random].data.url;
             var ups = res.body.data.children[random].data.ups;
             var downs = res.body.data.children[random].data.downs;
-
             const embed = new MessageEmbed()
                 .setTitle(args)
                 .setDescription(subreddit)
                 .setColor('TRANSPARENT')
                 .setFooter(`${ups} Upvotes • ${downs} Downvotes`)
 
-            if (url) {
+            if (url.length < 1) {
                 embed.setImage(url);
-            } else {
-                return
-            };
+            }
 
             msg.channel.send({
                 embed
             });
+            
         };
     });
 };
