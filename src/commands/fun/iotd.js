@@ -24,10 +24,10 @@ exports.conf = {
 }
 
 exports.help = {
-    aliases: ['iotd'],
-    name: 'imageoftheday',
+    aliases: ['image-of-the-day', 'imageoftheday'],
+    name: 'iotd',
     category: '😂 Fun',
-    description: 'Image of the day.',
-    example: 'imageoftheday',
-    usage: 'imageoftheday'
+    description: 'Image of the day, taken from NASA.',
+    example: 'iotd',
+    usage: 'iotd'
 }
