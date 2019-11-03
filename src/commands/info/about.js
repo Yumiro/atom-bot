@@ -29,6 +29,6 @@ exports.help = {
     aliases: ['bot', 'changelog'],
     name: 'about',
     category: '❔ Info',
-    description: 'Sends information about the bot.',
+    description: 'Sends information about the bot :robot:',
     usage: 'about'
 }

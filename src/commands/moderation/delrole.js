@@ -48,6 +48,6 @@ exports.help = {
     name: 'delrole',
     example: 'delrole @flag big dummy',
     category: '🔨 Moderation',
-    description: 'Removes a role to user in the guild.',
+    description: 'Removes a role from a user in the guild :newspaper2:',
     usage: 'delrole [@user] [role]'
 }

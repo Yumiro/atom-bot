@@ -21,6 +21,6 @@ exports.help = {
     aliases: ['hook'],
     name: 'webhook',
     category: '🚫 Owner',
-    description: 'Webhooks.',
+    description: 'Webhooks :chains:',
     usage: 'webhook [message]'
 }

@@ -55,6 +55,6 @@ exports.help = {
   aliases: ['server', 'serverinfo', 'guildinfo'],
   name: 'guild',
   category: '❔ Info',
-  description: 'Displays information about the current guild.',
+  description: 'Displays information about the current guild :family:',
   usage: 'guild'
 }

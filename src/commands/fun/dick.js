@@ -22,7 +22,7 @@ exports.help = {
     aliases: ['dick-size', 'dicksize', 'pp'],
     name: 'dick',
     category: '😂 Fun',
-    description: 'Checks your dick size :eyes:',
+    description: 'Checks your dick size :eggplant:',
     example: 'dick',
     usage: 'dick'
 }

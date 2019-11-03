@@ -43,6 +43,6 @@ exports.help = {
     name: 'mentionable',
     example: 'mentionable true blue',
     category: '🔨 Moderation',
-    description: 'Sets the specified role mentionable or unmentionable.',
+    description: 'Sets the specified role mentionable or unmentionable :e_mail:',
     usage: 'mentionable true or false [rolename]'
 }

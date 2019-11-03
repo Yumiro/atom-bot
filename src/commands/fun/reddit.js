@@ -39,7 +39,7 @@ exports.help = {
     aliases: ['sub'],
     name: 'reddit',
     category: '😂 Fun',
-    description: 'Sends a random post from a specified subreddit.',
+    description: 'Sends a random post from a specified subreddit :shower:',
     example: 'reddit softwaregore',
     usage: 'reddit [subreddit]'
 }

@@ -48,6 +48,6 @@ exports.help = {
     name: 'addrole',
     example: 'addrole @flag automaton',
     category: '🔨 Moderation',
-    description: 'Adds a role to user in the guild.',
+    description: 'Adds a role to a user in the guild :newspaper:',
     usage: 'addrole [@user] [role]'
 }

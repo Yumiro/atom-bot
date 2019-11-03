@@ -31,6 +31,6 @@ exports.help = {
     aliases: ['stats'],
     name: 'status',
     category: '❔ Info',
-    description: 'Checks the bot\'s status.',
+    description: 'Checks the bot\'s status :bar_chart:',
     usage: 'status'
 }

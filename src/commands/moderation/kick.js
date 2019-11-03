@@ -60,6 +60,6 @@ exports.help = {
     name: 'kick',
     example: 'kick @flag stop being rude',
     category: '🔨 Moderation',
-    description: 'Kicks a user from the guild.',
+    description: 'Kicks a user from the guild :hourglass:',
     usage: 'kick [@user] [reason]'
 }

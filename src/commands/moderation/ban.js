@@ -63,6 +63,6 @@ exports.help = {
     name: 'ban',
     example: 'ban @flag stop spamming',
     category: '🔨 Moderation',
-    description: 'Bans a user from the guild.',
+    description: 'Bans a user from the guild :hammer:',
     usage: 'ban [@user] [reason]'
 }
