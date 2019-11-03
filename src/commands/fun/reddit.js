@@ -13,7 +13,6 @@ exports.run = async (bot, msg, args) => {
             var url = res.body.data.children[random].data.url;
             var ups = res.body.data.children[random].data.ups;
             var downs = res.body.data.children[random].data.downs;
-
             const embed = new MessageEmbed()
                 .setTitle(args)
                 .setDescription(subreddit)
@@ -27,6 +26,7 @@ exports.run = async (bot, msg, args) => {
             msg.channel.send({
                 embed
             });
+            
         };
     });
 };
