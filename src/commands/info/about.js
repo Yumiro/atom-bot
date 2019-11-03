@@ -8,7 +8,7 @@ exports.run = async (bot, msg, args) => {
     const { body } = await req.get('https://api.github.com/repos/Yumiro/atom69/commits');
 
     var about = new MessageEmbed()
-        .setAuthor(`Changelog`, msg.guild.iconURL(), `https://discordapp.com/invite/eprUzer`)
+        .setAuthor(`Changelog`, msg.guild.iconURL(), `https://discord.gg/jUMqBjU`)
         .setColor('TRANSPARENT')
         .addField(`\`${body[0].sha.substring(0, 7)}\` by ${body[0].commit.author.name}`, `${body[0].commit.message}`)
         .addField(`\`${body[1].sha.substring(0, 7)}\` by ${body[1].commit.author.name}`, `${body[1].commit.message}`)
