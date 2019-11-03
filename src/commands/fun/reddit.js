@@ -18,8 +18,14 @@ exports.run = async (bot, msg, args) => {
                 .setTitle(args)
                 .setDescription(subreddit)
                 .setColor('TRANSPARENT')
-                .setImage(url)
                 .setFooter(`${ups} Upvotes • ${downs} Downvotes`)
+
+            if (url) {
+                embed.setImage(url);
+            } else {
+                return
+            };
+
             msg.channel.send({
                 embed
             });
