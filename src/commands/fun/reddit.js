@@ -19,7 +19,7 @@ exports.run = async (bot, msg, args) => {
                 .setColor('TRANSPARENT')
                 .setFooter(`${ups} Upvotes • ${downs} Downvotes`)
 
-            if (url.length < 1) {
+            if (url.length > 1) {
                 embed.setImage(url);
             }
 
