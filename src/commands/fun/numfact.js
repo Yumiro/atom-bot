@@ -1,10 +1,10 @@
 const {
     MessageEmbed
 } = require('discord.js');
-const snekfetch = require('snekfetch');
+const { get } = require('snekfetch');
 
 exports.run = async (bot, msg, args) => {
-    const { body } = snekfetch.get(`http://numbersapi.com/${args}/trivia`)
+    const { body } = await get(`http://numbersapi.com/${args}/trivia`)
 
     const embed = new MessageEmbed()
         .setDescription(body)
