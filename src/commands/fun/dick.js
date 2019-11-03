@@ -19,10 +19,10 @@ exports.conf = {
 }
 
 exports.help = {
-    aliases: ['iotd'],
-    name: 'imageoftheday',
+    aliases: ['dick-size', 'dicksize', 'pp'],
+    name: 'dick',
     category: '😂 Fun',
-    description: 'Image of the day.',
-    example: 'imageoftheday',
-    usage: 'imageoftheday'
+    description: 'Checks your dick size :eyes:',
+    example: 'dick',
+    usage: 'dick'
 }
