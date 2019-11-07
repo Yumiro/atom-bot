@@ -29,10 +29,11 @@ exports.run = async (bot, msg, args) => {
             });
             
         };
-        } catch(err) {
+
+    });
+                } catch(err) {
             message.channel.send('No subreddit found!')   
         }
-    });
 };
 
 exports.conf = {
