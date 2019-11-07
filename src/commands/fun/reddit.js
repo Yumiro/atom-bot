@@ -4,6 +4,7 @@ const {
 const req = require('superagent');
 
 exports.run = async (bot, msg, args) => {
+    try {
     req.get(`https://www.reddit.com/r/${args}.json`).query({
         limit: 75
     }).set('User-Agent', 'softwaregore-cli').end((err, res) => {
@@ -26,6 +27,9 @@ exports.run = async (bot, msg, args) => {
             msg.channel.send({
                 embed
             });
+        } catch(err) {
+            message.channel.send('No subreddit found!')   
+        }
             
         };
     });
