@@ -1,3 +1,5 @@
+// Hey lets fuck
+// Oh shit get out of this fucking file you faggot
 const Discord = require('discord.js');
 const {
   Client,
@@ -8,7 +10,6 @@ const Enmap = require('enmap');
 const bot = new Client({
   disableEveryone: true
 });
-const config = require("./config.json");
 const chalk = require('chalk');
 const {
   readdir
@@ -19,7 +20,7 @@ const folders = ['fun', 'info', 'moderation', 'owner'];
 this.bot = bot;
 bot.commands = new Collection();
 bot.aliases = new Collection();
-bot.config = config;
+bot.config = require('./config');
 bot.chalk = chalk;
 bot.version = 'v2-stable-bronze';
 global.firstUpper = function firstUpper(string) {
@@ -69,4 +70,4 @@ folders.forEach(folders => {
   });
 });
 
-bot.login(config.token);
+bot.login(bot.config.token);
