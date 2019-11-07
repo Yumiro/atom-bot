@@ -27,11 +27,11 @@ exports.run = async (bot, msg, args) => {
             msg.channel.send({
                 embed
             });
+            
+        };
         } catch(err) {
             message.channel.send('No subreddit found!')   
         }
-            
-        };
     });
 };
 
