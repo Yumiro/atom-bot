@@ -27,6 +27,6 @@ exports.help = {
     aliases: ['p', 'ping-pong', 'pong'],
     name: 'ping',
     category: '❔ Info',
-    description: 'Checks the bot\'s ping :watch:',
+    description: 'Checks the bot\'s ping',
     usage: 'ping'
 }

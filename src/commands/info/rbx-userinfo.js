@@ -47,7 +47,7 @@ exports.help = {
     aliases: ['rbx-user', 'roblox-user', 'roblox-userinfo'],
     name: 'rbx-userinfo',
     category: '❔ Info',
-    description: 'Sends information about a specific Roblox user :white_medium_square:',
+    description: 'Sends information about a specific Roblox user',
     example: 'rbx-userinfo FlagOfTheObby',
     usage: 'rbx-userinfo [user name]'
 }

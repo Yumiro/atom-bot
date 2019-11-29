@@ -22,7 +22,7 @@ exports.help = {
     aliases: ['number-fact', 'number-facts', 'numberfact', 'numberfacts', 'num-fact', 'num-facts', 'numfacts'],
     name: 'numfact',
     category: '😂 Fun',
-    description: 'Sends a random fact about a specified number :six:',
+    description: 'Sends a random fact about a specified number',
     example: 'numfact 42',
     usage: 'numfact [number]'
 }

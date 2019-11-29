@@ -53,6 +53,6 @@ exports.help = {
     name: 'clear',
     example: 'clear 42',
     category: '🔨 Moderation',
-    description: 'Clears a certain amount of messages in the channel :wastebasket:',
+    description: 'Clears a certain amount of messages in the channel',
     usage: 'clear [number between 1 and 100]'
 }

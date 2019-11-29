@@ -51,6 +51,6 @@ exports.help = {
     name: 'role',
     example: 'role green',
     category: '❔ Info',
-    description: 'Displays information about the specified role :page_with_curl:',
+    description: 'Displays information about the specified role',
     usage: 'role [rolename]'
 }

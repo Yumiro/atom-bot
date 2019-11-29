@@ -43,6 +43,6 @@ exports.help = {
     name: 'hoist',
     example: 'hoist true green',
     category: '🔨 Moderation',
-    description: 'Sets the specified role hoisted or unhoisted :arrow_up:',
+    description: 'Sets the specified role hoisted or unhoisted',
     usage: 'hoist true or false [rolename]'
 }

@@ -16,6 +16,6 @@ exports.help = {
     aliases: ['banlist', 'baddies'],
     name: 'bans',
     category: '❔ Info',
-    description: 'Lists all bans on the server you run the command :tools:',
+    description: 'Lists all bans on the server you run the command',
     usage: 'bans'
 }

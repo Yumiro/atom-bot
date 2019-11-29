@@ -56,6 +56,6 @@ exports.help = {
     aliases: ['?', 'h'],
     name: 'help',
     category: '❔ Info',
-    description: 'Sends a list of all commands that you can use :question:',
+    description: 'Sends a list of all commands that you can use',
     usage: 'help (command)'
 }

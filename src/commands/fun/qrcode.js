@@ -34,7 +34,7 @@ exports.help = {
     aliases: ['qr'],
     name: 'qrcode',
     category: '😂 Fun',
-    description: 'Generates a QR Code :notepad_spiral:',
+    description: 'Generates a QR Code',
     example: 'qrcode xQc',
     usage: 'qrcode [text]'
 }

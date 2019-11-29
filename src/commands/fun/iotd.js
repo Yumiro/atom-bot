@@ -27,7 +27,7 @@ exports.help = {
     aliases: ['image-of-the-day', 'imageoftheday'],
     name: 'iotd',
     category: '😂 Fun',
-    description: 'Image of the day, taken from NASA :milky_way:',
+    description: 'Image of the day, taken from NASA',
     example: 'iotd',
     usage: 'iotd'
 }

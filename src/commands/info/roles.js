@@ -19,6 +19,6 @@ exports.help = {
     aliases: ['listroles'],
     name: 'roles',
     category: '❔ Info',
-    description: 'Lists all of the server\'s roles :trophy:',
+    description: 'Lists all of the server\'s roles',
     usage: 'roles'
 }

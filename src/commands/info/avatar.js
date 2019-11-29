@@ -17,6 +17,6 @@ exports.help = {
     aliases: ['av'],
     name: 'avatar',
     category: '❔ Info',
-    description: 'Sends your avatar image :man:',
+    description: 'Sends your avatar image',
     usage: 'avatar'
 }
