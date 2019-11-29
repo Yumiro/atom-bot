@@ -17,17 +17,8 @@ exports.run = async (bot, msg, args) => {
                 .setTitle(args)
                 .setDescription(subreddit)
                 .setColor('TRANSPARENT')
+                .setImage(url ? url : 'https://cdn.discordapp.com/attachments/602576046361149451/650001880424120324/unknown.png')
                 .setFooter(`${ups} Upvotes • ${downs} Downvotes`)
-
-            if (err && res.notFound) {
-                msg.channel.send(`An error occurred.`);
-            };
-
-            if (url.endsWith('png') || url.endsWith('jpg') || url.endsWith('jpeg')) {
-                embed.setImage(url);
-            } else {
-                return;
-            };
 
             msg.channel.send({
                 embed
