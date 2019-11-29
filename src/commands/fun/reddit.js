@@ -17,7 +17,7 @@ exports.run = async (bot, msg, args) => {
                 .setTitle(args)
                 .setDescription(subreddit)
                 .setColor('TRANSPARENT')
-                .setImage(url || 'https://cdn.discordapp.com/attachments/602576046361149451/650001880424120324/unknown.png')
+                .setImage(url)
                 .setFooter(`${ups} Upvotes • ${downs} Downvotes`)
 
             msg.channel.send({
