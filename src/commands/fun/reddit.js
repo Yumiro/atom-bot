@@ -19,11 +19,15 @@ exports.run = async (bot, msg, args) => {
                 .setColor('TRANSPARENT')
                 .setFooter(`${ups} Upvotes • ${downs} Downvotes`)
 
-            if (!subreddit) {
-                msg.channel.send({
-                    embed
-                });
-            }
+            if (err && res.notFound) {
+                msg.channel.send(`An error occurred.`);
+            };
+
+            if (url.endsWith('png') || url.endsWith('jpg') || url.endsWith('jpeg')) {
+                embed.setImage(url);
+            } else {
+                return;
+            };
 
             msg.channel.send({
                 embed
