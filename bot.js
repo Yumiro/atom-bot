@@ -1,5 +1,3 @@
-// Hey lets fuck
-// Oh shit get out of this fucking file you faggot
 const Discord = require('discord.js');
 const {
   Client,
