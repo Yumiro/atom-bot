@@ -21,6 +21,9 @@ bot.aliases = new Collection();
 bot.config = require('./config');
 bot.chalk = chalk;
 bot.version = 'v2-stable-bronze';
+bot.emojiList = {
+  'check': '<:check:657238794499784735>'
+}
 global.firstUpper = function firstUpper(string) {
   const first = string.split("")[0].toUpperCase();
   const rest = string.split("").slice(1).join("");
