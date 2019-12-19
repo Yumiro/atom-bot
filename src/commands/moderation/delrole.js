@@ -28,10 +28,11 @@ exports.run = (bot, msg, args) => {
             if (member) {
                 if (role) {
                     member.roles.remove(`${role.id}`).then(() => {
-                        msg.channel.send('ok, done');
-                        console.log(bot.chalk.red(`[ ROLE ] ${user.tag} was taken from ${role.name}, by ${msg.author.tag}`));
+                        msg.channel.send(`${bot.emojiList.check} ${user.tag} was taken from **${role.name}** by ${msg.author.tag}.`);
+                        console.log(bot.chalk.red(`[ ROLE ] ${user.tag} was taken from ${role.name} by ${msg.author.tag}`));
                     }).catch(err => {
                         console.error(err);
+                        msg.channel.send(`${bot.emojiList.error} Something went wrong.`).then(msg => msg.delete(10000));
                     });
                 }
             }

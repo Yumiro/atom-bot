@@ -4,7 +4,7 @@ const {
 
 exports.run = async (bot, msg, args) => {
     if (!msg.member.hasPermission('MANAGE_MESSAGES')) {
-        msg.channel.send(`you can't do that`);
+        msg.channel.send(`${bot.emojiList.error} You can't do that, you're missing the \`MANAGE_MESSAGES\` permission.`);
 
     } else {
 
@@ -34,12 +34,12 @@ exports.run = async (bot, msg, args) => {
                 bot.guilds.find(f => f.name === 'atom/dev').channels.find(f => f.id === '613783841869529094').send({
                     embed
                 });
-                msg.channel.send('ok, done');
             }).catch(err => {
                 console.error(err);
+                msg.channel.send(`${bot.emojiList.error} Something went wrong.`).then(msg => msg.delete(10000));
             });
         } else {
-            msg.channel.send(`has to be a number between 1 and 100, dummy`);
+            msg.channel.send(`${bot.emojiList.check} You need to choose a number between 1 and 100.`);
         }
     }
 };

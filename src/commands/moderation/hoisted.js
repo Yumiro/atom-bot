@@ -4,7 +4,7 @@ const {
 
 exports.run = (bot, msg, args) => {
     if (!msg.member.hasPermission('MANAGE_ROLES')) {
-        msg.channel.send(`you can't do that`);
+        msg.channel.send(`${bot.emojiList.error} You can't do that, you're missing the \`MANAGE_ROLES\` permission.`);
 
     } else {
 
@@ -24,12 +24,14 @@ exports.run = (bot, msg, args) => {
         };
         if (msg.content.includes('true') && role) {
             role.setHoist(true, `[${msg.author.tag}]`);
-            msg.channel.send('ok, done');
+            console.log(bot.chalk.green(`[ ROLE ] ${role.name} was set as hoisted by ${msg.author.tag}`));
+            msg.channel.send(`${bot.emojiList.check} Succesfully hoisted **${role.name}**.`).then(msg => msg.delete(5000));
         };
 
         if (msg.content.includes('false') && role) {
             role.setHoist(false, `[${msg.author.tag}]`);
-            msg.channel.send('ok, done');
+            console.log(bot.chalk.red(`[ ROLE ] ${role.name} was set as un-hoisted by ${msg.author.tag}`));
+            msg.channel.send(`${bot.emojiList.check} Successfully un-hoisted **${role.name}**.`).then(msg => msg.delete(5000));
         };
     };
 };

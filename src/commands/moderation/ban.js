@@ -27,16 +27,16 @@ exports.run = (bot, msg, args) => {
                         reason: auditlog_reason,
                     }).then(() => {
                         guild.channels.find(f => f.id === '613783841869529094').send(embed);
-                        msg.channel.send('goodbye');
+                        msg.channel.send(`:wave:`).then(msg => msg.delete(3000));
                     }).catch(err => {
                         console.error(err);
                     });
                 } else {
-                    msg.channel.send(`you can't do that`);
+                    msg.channel.send(`${bot.emojiList.error} You can't do that, you're missing the \`BAN_MEMBERS\` permission.`).then(msg => msg.delete(5000));
                     return;
                 };
             } else {
-                msg.channel.send(`you can't do that`);
+                msg.channel.send(`${bot.emojiList.error} It looks like this user has the \`BAN_MEMBERS\` permission, try again later.`).then(msg => msg.delete(5000));
                 return;
             };
         };

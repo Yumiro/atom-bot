@@ -12,7 +12,7 @@ const chalk = require('chalk');
 const {
   readdir
 } = require('fs');
-const rbx = require("noblox.js");
+const rbx = require('noblox.js');
 const folders = ['fun', 'info', 'moderation', 'owner'];
 
 this.bot = bot;
@@ -20,13 +20,12 @@ bot.commands = new Collection();
 bot.aliases = new Collection();
 bot.config = require('./config');
 bot.chalk = chalk;
-bot.version = 'v2-stable-bronze';
+bot.version = 'v2.5-stable-bronze';
 bot.emojiList = {
   'bell': '<a:abell:486584452600954890>',
   'check': '<:check:657238794499784735>',
-  'indeterminate': '<:indeterminate:657238794386276422>',
   'error': '<:error:657238794461904916>'
-}
+};
 global.firstUpper = function firstUpper(string) {
   const first = string.split("")[0].toUpperCase();
   const rest = string.split("").slice(1).join("");

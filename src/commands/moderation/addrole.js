@@ -4,7 +4,7 @@ const {
 
 exports.run = (bot, msg, args) => {
     if (!msg.member.hasPermission('MANAGE_ROLES')) {
-        msg.channel.send(`you can't do that`);
+        msg.channel.send(`${bot.emojiList.error} You can't do that, you're missing the \`MANAGE_ROLES\` permission.`);
 
     } else {
 
@@ -28,10 +28,11 @@ exports.run = (bot, msg, args) => {
             if (member) {
                 if (role) {
                     member.roles.add(`${role.id}`).then(() => {
-                        msg.channel.send('ok, done');
-                        console.log(bot.chalk.green(`[ ROLE ] ${user.tag} was given ${role.name}, by ${msg.author.tag}`));
+                        msg.channel.send(`${bot.emojiList.check} ${user.tag} was given **${role.name}** by ${msg.author.tag}.`).then(msg => msg.delete(3000));
+                        console.log(bot.chalk.green(`[ ROLE ] ${user.tag} was given ${role.name} by ${msg.author.tag}`));
                     }).catch(err => {
                         console.error(err);
+                        msg.channel.send(`${bot.emojiList.error} Something went wrong.`).then(msg => msg.delete(10000));
                     });
                 }
             }

@@ -27,7 +27,7 @@ exports.run = async (bot, msg, args) => {
         };
 
         /**
-         * TODO: Add proper handling for posts that don't have an image
+         * TODO: Add proper image handling for posts that don't have an image
          */
 
     });
