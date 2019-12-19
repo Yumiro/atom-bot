@@ -22,7 +22,10 @@ bot.config = require('./config');
 bot.chalk = chalk;
 bot.version = 'v2-stable-bronze';
 bot.emojiList = {
-  'check': '<:check:657238794499784735>'
+  'bell': '<a:abell:486584452600954890>',
+  'check': '<:check:657238794499784735>',
+  'indeterminate': '<:indeterminate:657238794386276422>',
+  'error': '<:error:657238794461904916>'
 }
 global.firstUpper = function firstUpper(string) {
   const first = string.split("")[0].toUpperCase();
