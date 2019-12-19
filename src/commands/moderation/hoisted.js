@@ -25,13 +25,13 @@ exports.run = (bot, msg, args) => {
         if (msg.content.includes('true') && role) {
             role.setHoist(true, `[${msg.author.tag}]`);
             console.log(bot.chalk.green(`[ ROLE ] ${role.name} was set as hoisted by ${msg.author.tag}`));
-            msg.channel.send(`${bot.emojiList.check} Succesfully hoisted **${role.name}**.`).then(msg => msg.delete(5000));
+            msg.channel.send(`${bot.emojiList.check} Succesfully hoisted **${role.name}**.`);
         };
 
         if (msg.content.includes('false') && role) {
             role.setHoist(false, `[${msg.author.tag}]`);
             console.log(bot.chalk.red(`[ ROLE ] ${role.name} was set as un-hoisted by ${msg.author.tag}`));
-            msg.channel.send(`${bot.emojiList.check} Successfully un-hoisted **${role.name}**.`).then(msg => msg.delete(5000));
+            msg.channel.send(`${bot.emojiList.check} Successfully un-hoisted **${role.name}**.`);
         };
     };
 };

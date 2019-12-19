@@ -25,13 +25,13 @@ exports.run = (bot, msg, args) => {
         if (msg.content.includes('true') && role) {
             role.setMentionable(true, `[${msg.author.tag}]`);
             console.log(bot.chalk.green(`[ ROLE ] ${role.name} was set as mentionable by ${msg.author.tag}`));
-            msg.channel.send(`${bot.emojiList.check} Succesfully made **${role.name}** mentionable.`).then(msg => msg.delete(5000));
+            msg.channel.send(`${bot.emojiList.check} Succesfully made **${role.name}** mentionable.`);
         };
 
         if (msg.content.includes('false') && role) {
             role.setMentionable(false, `[${msg.author.tag}]`);
             console.log(bot.chalk.red(`[ ROLE ] ${role.name} was set as unmentionable by ${msg.author.tag}`));
-            msg.channel.send(`${bot.emojiList.check} Successfully made **${role.name}** unmentionable.`).then(msg => msg.delete(5000));
+            msg.channel.send(`${bot.emojiList.check} Successfully made **${role.name}** unmentionable.`);
         };
     };
 };

@@ -32,7 +32,7 @@ exports.run = (bot, msg, args) => {
                         console.log(bot.chalk.red(`[ ROLE ] ${user.tag} was taken from ${role.name} by ${msg.author.tag}`));
                     }).catch(err => {
                         console.error(err);
-                        msg.channel.send(`${bot.emojiList.error} Something went wrong.`).then(msg => msg.delete(10000));
+                        msg.channel.send(`${bot.emojiList.error} Something went wrong.`);
                     });
                 }
             }

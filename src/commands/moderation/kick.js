@@ -26,16 +26,16 @@ exports.run = (bot, msg, args) => {
                             .addField(`User`, `${user.tag} (${user.id})`, false)
                             .addField(`Reason`, `${reason}`, false)
                         guild.channels.find(f => f.id === '613783841869529094').send(embed);
-                        msg.channel.send(`:wave:`).then(msg => msg.delete(3000));
+                        msg.channel.send(`:wave:`);
                     }).catch(err => {
                         console.error(err);
                     });
                 } else {
-                    msg.channel.send(`${bot.emojiList.error} You can't do that, you're missing the \`KICK_MEMBERS\` permission.`).then(msg => msg.delete(5000));
+                    msg.channel.send(`${bot.emojiList.error} You can't do that, you're missing the \`KICK_MEMBERS\` permission.`);
                     return;
                 };
             } else {
-                msg.channel.send(`${bot.emojiList.error} It looks like this user has the \`KICK_MEMBERS\` permission, try again later.`).then(msg => msg.delete(5000));
+                msg.channel.send(`${bot.emojiList.error} It looks like this user has the \`KICK_MEMBERS\` permission, try again later.`);
                 return;
             };
         };

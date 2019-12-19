@@ -36,10 +36,10 @@ exports.run = async (bot, msg, args) => {
                 });
             }).catch(err => {
                 console.error(err);
-                msg.channel.send(`${bot.emojiList.error} Something went wrong.`).then(msg => msg.delete(10000));
+                msg.channel.send(`${bot.emojiList.error} Something went wrong.`);
             });
         } else {
-            msg.channel.send(`${bot.emojiList.check} You need to choose a number between 1 and 100.`);
+            msg.channel.send(`${bot.emojiList.error} You need to choose a number between 1 and 100.`);
         }
     }
 };

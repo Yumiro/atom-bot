@@ -28,11 +28,11 @@ exports.run = (bot, msg, args) => {
             if (member) {
                 if (role) {
                     member.roles.add(`${role.id}`).then(() => {
-                        msg.channel.send(`${bot.emojiList.check} ${user.tag} was given **${role.name}** by ${msg.author.tag}.`).then(msg => msg.delete(3000));
+                        msg.channel.send(`${bot.emojiList.check} ${user.tag} was given **${role.name}** by ${msg.author.tag}.`);
                         console.log(bot.chalk.green(`[ ROLE ] ${user.tag} was given ${role.name} by ${msg.author.tag}`));
                     }).catch(err => {
                         console.error(err);
-                        msg.channel.send(`${bot.emojiList.error} Something went wrong.`).then(msg => msg.delete(10000));
+                        msg.channel.send(`${bot.emojiList.error} Something went wrong.`);
                     });
                 }
             }
