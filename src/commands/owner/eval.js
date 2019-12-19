@@ -7,7 +7,7 @@ exports.run = (bot, msg, args) => {
     this.bot = bot;
 
     if (!args[0]) {
-        msg.channel.send(`where's the code dummy`);
+        msg.channel.send(`${bot.emojiList.indeterminate} Where's the code you idiot`);
     };
 
     if (args[0]) {
