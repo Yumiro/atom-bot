@@ -13,7 +13,7 @@ exports.run = async (bot, msg, args) => {
             var url = res.body.data.children[random].data.url;
             var ups = res.body.data.children[random].data.ups;
             var downs = res.body.data.children[random].data.downs;
-            if (!url.endsWith('.png' || '.jpg' || '.jpeg')) {
+            if (!url.includes('.png' || '.jpg' || '.jpeg')) {
                 const embed = new MessageEmbed()
                     .setTitle(args)
                     .setDescription(subreddit)
