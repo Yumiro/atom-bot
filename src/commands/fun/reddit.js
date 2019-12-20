@@ -10,13 +10,14 @@ exports.run = async (bot, msg, args) => {
         if (!err && res.ok) {
             var random = Math.floor(Math.random() * (75 - 2 + 1) + 1);
             var subreddit = res.body.data.children[random].data.title;
+            var permalink = res.body.data.children[random].data.permalink;
             var url = res.body.data.children[random].data.url;
             var ups = res.body.data.children[random].data.ups;
             var downs = res.body.data.children[random].data.downs;
             if (!url.endsWith('.png' || '.jpg' || '.jpeg')) {
                 const embed = new MessageEmbed()
                     .setTitle(args)
-                    .setDescription(`[${subreddit}](${url})`)
+                    .setDescription(`[${subreddit}](${permalink})`)
                     .setColor('TRANSPARENT')
                     .setFooter(`${ups} Upvotes • ${downs} Downvotes`)
 
@@ -26,7 +27,7 @@ exports.run = async (bot, msg, args) => {
             } else {
                 const embed = new MessageEmbed()
                     .setTitle(args)
-                    .setDescription(`[${subreddit}](${url})`)
+                    .setDescription(`[${subreddit}](${permalink})`)
                     .setColor('TRANSPARENT')
                     .setImage(url)
                     .setFooter(`${ups} Upvotes • ${downs} Downvotes`)
