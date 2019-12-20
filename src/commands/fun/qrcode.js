@@ -12,8 +12,8 @@ exports.run = async (bot, msg, args) => {
         );
 
     }
-
-    if (!args) {
+    
+    /* else if(!args) {
 
         const embed = new MessageEmbed()
             .addField(firstUpper(this.help.name), this.help.description, false)
@@ -25,7 +25,11 @@ exports.run = async (bot, msg, args) => {
             embed
         });
 
-    }
+    } */
+
+    /**
+     * TODO: Fix missing args show command usage
+     */
 };
 
 exports.conf = {
