@@ -10,7 +10,7 @@ exports.run = async (bot, msg, args) => {
         if (!err && res.ok) {
             var random = Math.floor(Math.random() * (75 - 2 + 1) + 1);
             var subreddit = res.body.data.children[random].data.title;
-            var url = res.body.data.children[random].data.url;
+            var url = res.body.data.children[random].data.preview.images.source.url;
             var ups = res.body.data.children[random].data.ups;
             var downs = res.body.data.children[random].data.downs;
             const embed = new MessageEmbed()
