@@ -24,7 +24,7 @@ exports.conf = {
 }
 
 exports.help = {
-    aliases: ['image-of-the-day', 'imageoftheday'],
+    aliases: ['image-of-the-day', 'imageoftheday', 'nasa-iotd', 'nasa-image'],
     name: 'iotd',
     category: '😂 Fun',
     description: 'Image of the day, taken from NASA',
