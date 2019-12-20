@@ -17,7 +17,7 @@ exports.run = async (bot, msg, args) => {
             if (!url.endsWith('.png' || '.jpg' || '.jpeg')) {
                 const embed = new MessageEmbed()
                     .setTitle(args)
-                    .setDescription(`[${subreddit}](${permalink})`)
+                    .setDescription(`[${subreddit}](https://reddit.com${permalink})`)
                     .setColor('TRANSPARENT')
                     .setFooter(`${ups} Upvotes • ${downs} Downvotes`)
 
