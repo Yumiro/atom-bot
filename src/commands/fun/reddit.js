@@ -15,8 +15,8 @@ exports.run = async (bot, msg, args) => {
             var downs = res.body.data.children[random].data.downs;
             if (!url.endsWith('.png' || '.jpg' || '.jpeg')) {
                 const embed = new MessageEmbed()
-                    .setTitle(`[${args}](${url})`)
-                    .setDescription(subreddit)
+                    .setTitle(args)
+                    .setDescription(`[${subreddit}](${url})`)
                     .setColor('TRANSPARENT')
                     .setFooter(`${ups} Upvotes • ${downs} Downvotes`)
 
@@ -26,7 +26,7 @@ exports.run = async (bot, msg, args) => {
             } else {
                 const embed = new MessageEmbed()
                     .setTitle(args)
-                    .setDescription(subreddit)
+                    .setDescription(`[${subreddit}](${url})`)
                     .setColor('TRANSPARENT')
                     .setImage(url)
                     .setFooter(`${ups} Upvotes • ${downs} Downvotes`)
