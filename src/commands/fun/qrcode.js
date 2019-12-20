@@ -11,7 +11,9 @@ exports.run = async (bot, msg, args) => {
             .setImage(`https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(args)}`)
         );
 
-    } else if(!args) {
+    }
+
+    if (!args) {
 
         const embed = new MessageEmbed()
             .addField(firstUpper(this.help.name), this.help.description, false)
