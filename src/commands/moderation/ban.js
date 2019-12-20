@@ -32,11 +32,11 @@ exports.run = (bot, msg, args) => {
                         console.error(err);
                     });
                 } else {
-                    msg.channel.send(`${bot.emojiList.error} You can't do that, you're missing the \`BAN_MEMBERS\` permission`);
+                    msg.channel.send(`${bot.emojiList.error} ${bot.emojiList.error} It looks like this user has the \`BAN_MEMBERS\` permission, try again later.`);
                     return;
                 };
             } else {
-                msg.channel.send(`${bot.emojiList.error} It looks like this user has the \`BAN_MEMBERS\` permission, try again later.`);
+                msg.channel.send(`${bot.emojiList.error} You can't do that, you're missing the \`BAN_MEMBERS\` permission.`);
                 return;
             };
         };
@@ -63,6 +63,6 @@ exports.help = {
     name: 'ban',
     example: 'ban @flag stop spamming',
     category: '🔨 Moderation',
-    description: 'Bans a user from the guild',
+    description: 'Bans the specified user from the guild',
     usage: 'ban [@user] [reason]'
 }

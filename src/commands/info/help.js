@@ -27,11 +27,11 @@ exports.run = async (bot, msg, args) => {
         if (bot.commands.has(cmd)) {
             cmd = bot.commands.get(cmd);
             if (cmd.conf.hidden === true) {
-                msg.channel.send(`you can't do that`);
+                msg.channel.send(`${bot.emojiList.error} You can't do that.`);
                 return;
             };
             if (cmd.conf.dev === true && !bot.config.ownerID.includes(msg.author.id)) {
-                msg.channel.send(`you can't do that`);
+                msg.channel.send(`${bot.emojiList.error} You can't do that, you're not the developer.`);
                 return;
             };
             var embed2 = new MessageEmbed()
@@ -43,7 +43,7 @@ exports.run = async (bot, msg, args) => {
                 .addField(`Group`, `${cmd.help.category}`, true)
             await msg.channel.send(embed2);
         } else {
-            msg.channel.send(`oops, something went wrong`);
+            msg.channel.send(`${bot.emojiList.error} Something went wrong, if this error continues to persist please contact the developer: **${bot.users.get('458659194707640321').tag}**.`);
         }
     }
 };

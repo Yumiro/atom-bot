@@ -31,11 +31,11 @@ exports.run = (bot, msg, args) => {
                         console.error(err);
                     });
                 } else {
-                    msg.channel.send(`${bot.emojiList.error} You can't do that, you're missing the \`KICK_MEMBERS\` permission.`);
+                    msg.channel.send(`${bot.emojiList.error} It looks like this user has the \`KICK_MEMBERS\` permission, try again later.`);
                     return;
                 };
             } else {
-                msg.channel.send(`${bot.emojiList.error} It looks like this user has the \`KICK_MEMBERS\` permission, try again later.`);
+                msg.channel.send(`${bot.emojiList.error} You can't do that, you're missing the \`KICK_MEMBERS\` permission.`);
                 return;
             };
         };
@@ -60,6 +60,6 @@ exports.help = {
     name: 'kick',
     example: 'kick @flag stop being rude',
     category: '🔨 Moderation',
-    description: 'Kicks a user from the guild',
+    description: 'Kicks the specified user from the guild',
     usage: 'kick [@user] [reason]'
 }

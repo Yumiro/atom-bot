@@ -24,6 +24,6 @@ exports.help = {
     aliases: ['u', 'pull'],
     name: 'update',
     category: '🚫 Owner',
-    description: 'Git pull nonsense:',
+    description: 'Git pull nonsense',
     usage: 'update'
 };

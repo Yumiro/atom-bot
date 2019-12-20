@@ -36,7 +36,7 @@ exports.run = async (bot, msg, args) => {
                 });
             }).catch(err => {
                 console.error(err);
-                msg.channel.send(`${bot.emojiList.error} Something went wrong.`);
+                msg.channel.send(`${bot.emojiList.error} Something went wrong, if this error continues to persist please contact the developer: **${bot.users.get('458659194707640321').tag}**.`);
             });
         } else {
             msg.channel.send(`${bot.emojiList.error} You need to choose a number between 1 and 100.`);

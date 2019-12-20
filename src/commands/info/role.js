@@ -51,6 +51,6 @@ exports.help = {
     name: 'role',
     example: 'role green',
     category: '❔ Info',
-    description: 'Displays information about the specified role',
+    description: 'Displays information about a specified role',
     usage: 'role [rolename]'
 }

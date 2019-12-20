@@ -4,7 +4,7 @@ const {
 
 exports.run = async (bot, msg, args) => {
 
-    if (!args) {
+    if (args) {
         msg.channel.send(
             new MessageEmbed()
             .setColor('TRANSPARENT')

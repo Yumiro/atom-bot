@@ -32,7 +32,7 @@ exports.run = (bot, msg, args) => {
                         console.log(bot.chalk.green(`[ ROLE ] ${user.tag} was given ${role.name} by ${msg.author.tag}`));
                     }).catch(err => {
                         console.error(err);
-                        msg.channel.send(`${bot.emojiList.error} Something went wrong.`);
+                        msg.channel.send(`${bot.emojiList.error} Something went wrong, if this error continues to persist please contact the developer: **${bot.users.get('458659194707640321').tag}**.`);
                     });
                 }
             }
@@ -49,6 +49,6 @@ exports.help = {
     name: 'addrole',
     example: 'addrole @flag automaton',
     category: '🔨 Moderation',
-    description: 'Adds a role to a user in the guild',
+    description: 'Adds a specified role to a certain user in the guild',
     usage: 'addrole [@user] [role]'
 }

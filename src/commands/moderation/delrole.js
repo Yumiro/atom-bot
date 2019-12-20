@@ -32,7 +32,7 @@ exports.run = (bot, msg, args) => {
                         console.log(bot.chalk.red(`[ ROLE ] ${user.tag} was taken from ${role.name} by ${msg.author.tag}`));
                     }).catch(err => {
                         console.error(err);
-                        msg.channel.send(`${bot.emojiList.error} Something went wrong.`);
+                        msg.channel.send(`${bot.emojiList.error} Something went wrong, if this error continues to persist please contact the developer: **${bot.users.get('458659194707640321').tag}**.`);
                     });
                 }
             }
@@ -49,6 +49,6 @@ exports.help = {
     name: 'delrole',
     example: 'delrole @flag big dummy',
     category: '🔨 Moderation',
-    description: 'Removes a role from a user in the guild',
+    description: 'Removes a specified role from a certain user in the guild',
     usage: 'delrole [@user] [role]'
 }

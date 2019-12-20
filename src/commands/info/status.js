@@ -19,7 +19,7 @@ exports.run = async (bot, msg, args) => {
         .addField(`Users`, bot.users.size - 1, true)
         .addField(`Ping`, Math.round(bot.ws.ping) + 'ms', true)
         .addField(`Version`, bot.version, true)
-        .addField(`Is Emma Cute:tm:`, isEmmaCute, true)
+        .addField(`Is Emma Cute️™️`, isEmmaCute, true)
     msg.channel.send(status);
 };
 
