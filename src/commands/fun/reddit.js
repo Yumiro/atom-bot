@@ -8,6 +8,7 @@ exports.run = async (bot, msg, args) => {
         limit: 75
     }).set('User-Agent', 'softwaregore-cli').end((err, res) => {
         if (!err && res.ok) {
+            var random = Math.floor(Math.random() * (75 - 2 + 1) + 1);
             var subreddit = res.body.data.children[random].data.title;
             var url = res.body.data.children[random].data.url;
             var ups = res.body.data.children[random].data.ups;
