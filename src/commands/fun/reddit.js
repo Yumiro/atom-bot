@@ -4,15 +4,15 @@ const {
 const req = require('superagent');
 
 exports.run = async (bot, msg, args) => {
-    req.get(`https://www.reddit.com/r/${args}.json`).query({
+    req.get(`https://www.reddit.com/r/${args}/random.json`).query({
         limit: 75
     }).set('User-Agent', 'softwaregore-cli').end((err, res) => {
         if (!err && res.ok) {
-            var random = Math.floor(Math.random() * (75 - 2 + 1) + 1);
-            var subreddit = res.body.data.children[random].data.title;
-            var url = res.body.data.children[random].data.url;
-            var ups = res.body.data.children[random].data.ups;
-            var downs = res.body.data.children[random].data.downs;
+            let content = JSON.parse(res.body);
+            var subreddit = content[0].data.children.data.title;
+            var url = content[0].data.children.data.url;
+            var ups = content[0].data.children.data.ups;
+            var downs = content[0].data.children.data.downs;
             if (!url.endsWith('.png' || '.jpg' || '.jpeg')) {
                 const embed = new MessageEmbed()
                     .setTitle(args)
