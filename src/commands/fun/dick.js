@@ -19,7 +19,7 @@ exports.conf = {
 }
 
 exports.help = {
-    aliases: ['dick-size', 'dicksize', 'pp'],
+    aliases: ['dick-size', 'dicksize', 'pp', 'big-pp', 'bigpp', 'cock', 'cocksize', 'cock-size'],
     name: 'dick',
     category: '😂 Fun',
     description: 'Checks your dick size',

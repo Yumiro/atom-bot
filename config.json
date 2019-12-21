@@ -4,5 +4,7 @@
     "ownerID": [
         "458659194707640321"
     ],
-    "nasaAPI": ""
+    "nasaAPI": "",
+    "webhookID": "",
+    "webhookTOKEN": ""
 }
