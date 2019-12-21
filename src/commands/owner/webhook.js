@@ -2,8 +2,7 @@ const {
     WebhookClient
 } = require('discord.js');
 exports.run = async (bot, msg, args) => {
-    const Hook = new WebhookClient(bot.config.webhookID,
-        bot.config.webhookTOKEN);
+    const Hook = new WebhookClient(bot.config.webhookID, bot.config.webhookTOKEN);
     if (bot.config.ownerID.includes(msg.author.id)) {
         msg.delete();
         Hook.send(args.join(' '));

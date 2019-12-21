@@ -32,7 +32,7 @@ exports.run = (bot, msg, args) => {
                         console.error(err);
                     });
                 } else {
-                    msg.channel.send(`${bot.emojiList.error} ${bot.emojiList.error} It looks like this user has the \`BAN_MEMBERS\` permission, try again later.`);
+                    msg.channel.send(`${bot.emojiList.error} It looks like this user has the \`BAN_MEMBERS\` permission, try again later.`);
                     return;
                 };
             } else {
