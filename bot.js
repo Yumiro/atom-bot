@@ -20,7 +20,8 @@ bot.commands = new Collection();
 bot.aliases = new Collection();
 bot.config = require('./config');
 bot.chalk = chalk;
-bot.version = 'v2.5-stable-bronze';
+bot.version = 'v3-stable-copper';
+bot.versionIMG = 'https://vignette.wikia.nocookie.net/azure-mines/images/2/20/Blockcopper.png';
 bot.emojiList = {
   'bell': '<a:abell:486584452600954890>',
   'check': '<:check:657238794499784735>',

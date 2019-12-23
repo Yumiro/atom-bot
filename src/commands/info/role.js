@@ -13,7 +13,7 @@ exports.run = async (bot, msg, args) => {
             .setFooter(msg.guild.name)
             .setColor('TRANSPARENT')
             .addField('User Count', `${role.members.size} ${role.members.size < 2 ? 'user' : 'users'}`, true)
-            .addField('Permissions', `${role.permissions.bitfield} (bitfield)`, true)
+            .addField('Permissions', `${role.permissions.bitfield}`, true)
             .addField('Created At', `${moment.utc(role.createdAt).format('ddd, MMM Do YYYY')}`, true)
             .addField('Mentionable', `${role.mentionable ? 'Yes' : 'No'}`, true)
             .addField('Hoisted', `${role.hoist ? 'Yes' : 'No'}`, true)

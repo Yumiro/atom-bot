@@ -10,9 +10,8 @@ exports.run = async (bot, msg, args) => {
             .setColor('TRANSPARENT')
             .setImage(`https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(args)}`)
         );
+    };
 
-    }
-    
     /* else if(!args) {
 
         const embed = new MessageEmbed()

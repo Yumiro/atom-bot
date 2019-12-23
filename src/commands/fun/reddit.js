@@ -39,7 +39,7 @@ exports.run = async (bot, msg, args) => {
         };
 
         /**
-         * -- Fixed somewhat T̶O̶D̶O̶:̶ ̶A̶d̶d̶ ̶p̶r̶o̶p̶e̶r̶ ̶i̶m̶a̶g̶e̶ ̶h̶a̶n̶d̶l̶i̶n̶g̶ ̶f̶o̶r̶ ̶p̶o̶s̶t̶s̶ ̶t̶h̶a̶t̶ ̶d̶o̶n̶'̶t̶ ̶h̶a̶v̶e̶ ̶a̶n̶ ̶i̶m̶a̶g̶e̶
+         * Temporarily fixed T̶O̶D̶O̶:̶ ̶A̶d̶d̶ ̶p̶r̶o̶p̶e̶r̶ ̶i̶m̶a̶g̶e̶ ̶h̶a̶n̶d̶l̶i̶n̶g̶ ̶f̶o̶r̶ ̶p̶o̶s̶t̶s̶ ̶t̶h̶a̶t̶ ̶d̶o̶n̶'̶t̶ ̶h̶a̶v̶e̶ ̶a̶n̶ ̶i̶m̶a̶g̶e̶
          */
 
     });

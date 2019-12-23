@@ -43,7 +43,7 @@ exports.run = async (bot, msg, args) => {
                 .addField(`Group`, `${cmd.help.category}`, true)
             await msg.channel.send(embed2);
         } else {
-            msg.channel.send(`${bot.emojiList.error} Something went wrong, if this error continues to persist please contact the developer: **${bot.users.get('458659194707640321').tag}**.`);
+            msg.channel.send(`${bot.emojiList.error} Something went wrong, make sure you type the name of the command correctly.`);
         }
     }
 };

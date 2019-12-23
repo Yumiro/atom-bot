@@ -12,7 +12,7 @@ exports.run = async (bot, msg, args) => {
                 description: `:heartbeat: ${Math.floor(restLatency)}ms\n\n:hourglass: ${Math.floor(bot.ws.ping)}ms`,
                 footer: {
                     name: msg.guild.name,
-                    icon_url: ''
+                    icon_url: bot.versionIMG
                 }
             }
         });

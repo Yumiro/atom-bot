@@ -22,6 +22,6 @@
     "node-superfetch": "^0.1.9",
     "rss-parser": "^3.7.3",
     "snekfetch": "^4.0.4",
-    "superagent": "^5.1.0"
+    "superagent": "^5.1.3"
   }
 }

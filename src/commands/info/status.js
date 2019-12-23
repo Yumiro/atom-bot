@@ -9,7 +9,7 @@ exports.run = async (bot, msg, args) => {
 
     var status = new MessageEmbed()
         .setColor('TRANSPARENT')
-        .setFooter(msg.guild.name)
+        .setFooter(msg.guild.name, bot.versionIMG)
         .setTitle(`Bot Status`)
         .addField(`Memory Usage`, (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2) + 'MB', true)
         .addField(`Uptime`, duration, true)

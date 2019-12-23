@@ -6,7 +6,8 @@ exports.run = async (bot, msg, args) => {
     const size = msg.author.id.slice(-3) % 20 + 1;
 
     const embed = new MessageEmbed()
-        .setDescription(`${size}cm\n8${'='.repeat(size)}D`)
+        .setTitle(size + 'cm')
+        .setDescription(`8${'='.repeat(size)}D`)
         .setColor('TRANSPARENT')
 
     msg.channel.send({

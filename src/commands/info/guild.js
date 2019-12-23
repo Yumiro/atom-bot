@@ -13,9 +13,9 @@ exports.run = async (bot, msg, args) => {
   } else if (msg.guild.verificationLevel === 1) {
     level = `Verified Email`;
   } else if (msg.guild.verificationLevel === 2) {
-    level = `Registered (5 min)`;
+    level = `Registered for 5 min`;
   } else if (msg.guild.verificationLevel === 3) {
-    level = `Server Member (10 min)`;
+    level = `Server Member for 10 min`;
   } else if (msg.guild.verificationLevel === 4) {
     level = `Verified Phone`;
   }

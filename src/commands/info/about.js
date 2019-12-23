@@ -17,7 +17,7 @@ exports.run = async (bot, msg, args) => {
         .addField(`\`${body[4].sha.substring(0, 7)}\` by ${body[4].commit.author.name}`, `[${body[4].commit.message}](https://github.com/Yumiro/atom-bot/commit/${body[4].sha.substring(0, 7)})`)
         .addField(`Library`, `Discord.js`)
         .addField(`People`, `Head Developer - ${bot.users.get('458659194707640321').tag}\nDeveloper - ${bot.users.get('621154191192096778').tag}\nContributor - ${bot.users.get('593510080528515072').tag}`)
-        .setFooter(`${bot.version} • showing latest 5 commits`, `https://cdn.discordapp.com/attachments/502648889728434176/608398619191803936/space.gif`)
+        .setFooter(`${bot.version} • showing latest 5 commits`, bot.versionIMG)
     msg.channel.send(about);
 };
 
