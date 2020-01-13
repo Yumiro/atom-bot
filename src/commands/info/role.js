@@ -9,17 +9,11 @@ exports.run = async (bot, msg, args) => {
     if (argsv2) {
         const role = msg.guild.roles.find(f => f.name === argsv2);
         if (role) {
-            let text = msg.guild.name;
-
-            if (role.permissions.serialize().ADMINISTRATOR) {
-                text = 'Members with this role have every permission and can bypass any channel specific permissions'
-            };
-
             msg.channel.send({
                 embed: {
                     color: 'TRANSPARENT',
                     footer: {
-                        name: text,
+                        name: msg.guild.name,
                         iconURL: msg.guild.iconURL()
                     },
                     fields: [
@@ -72,13 +66,6 @@ exports.run = async (bot, msg, args) => {
                 }
             });
         } else {
-            /* const embed = new MessageEmbed()
-                .addField(firstUpper(this.help.name), this.help.description, false)
-                .addField('Usage', this.help.usage, true)
-                .addField('Example', this.help.example, true)
-                .setColor('TRANSPARENT')
-                .setFooter(msg.guild.name) */
-
             msg.channel.send({
                 embed: {
                     color: 'TRANSPARENT',
