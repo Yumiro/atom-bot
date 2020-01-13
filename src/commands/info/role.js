@@ -30,14 +30,38 @@ exports.run = async (bot, msg, args) => {
             embed
         });
     } else {
-        const emb = new MessageEmbed()
+        /* const embed = new MessageEmbed()
             .addField(firstUpper(this.help.name), this.help.description, false)
             .addField('Usage', this.help.usage, true)
             .addField('Example', this.help.example, true)
             .setColor('TRANSPARENT')
-            .setFooter(msg.guild.name)
+            .setFooter(msg.guild.name) */
 
-        msg.channel.send(emb);
+        msg.channel.send({
+            embed: {
+                color: 'TRANSPARENT',
+                fields: [
+                    {
+                        name: firstUpper(this.help.name),
+                        value: this.help.description,
+                        inline: false
+                    },
+                    {
+                        name: 'Usage',
+                        value: this.help.usage,
+                        inline: true
+                    },
+                    {
+                        name: 'Example',
+                        value: this.help.example,
+                        inline: true
+                    }
+                ],
+                footer: {
+                    text: msg.guild.name
+                }
+            }
+        });
         return;
     };
 };
