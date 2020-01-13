@@ -34,14 +34,14 @@ exports.run = async (bot, msg, args) => {
                 msg.channel.send(`${bot.emojiList.error} You can't do that, you're not the developer.`);
                 return;
             };
-            var embed2 = new MessageEmbed()
+            const embed = new MessageEmbed()
                 .setColor('TRANSPARENT')
                 .setFooter(msg.guild.name)
                 .addField(firstUpper(cmd.help.name), cmd.help.description, false)
                 .addField(`Aliases`, `${cmd.help.aliases.sort().join(', ')}`, true)
                 .addField(`Usage`, `${cmd.help.usage}`, true)
                 .addField(`Group`, `${cmd.help.category}`, true)
-            await msg.channel.send(embed2);
+            await msg.channel.send(embed);
         } else {
             msg.channel.send(`${bot.emojiList.error} Something went wrong, make sure you type the name of the command correctly.`);
         }
