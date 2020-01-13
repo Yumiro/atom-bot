@@ -3,7 +3,7 @@ exports.run = async (bot, msg, args) => {
     await msg.channel.send({
         embed: {
             color: 'TRANSPARENT',
-            description: `:hammer: ${bans.size} ${bans.size < 2 ? 'ban' : 'bans'}`
+            description: `🔨 ${bans.size} ${bans.size < 2 ? 'ban' : 'bans'}`
         }
     });
 };
