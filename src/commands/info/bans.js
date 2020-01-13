@@ -3,7 +3,7 @@ exports.run = async (bot, msg, args) => {
     await msg.channel.send({
         embed: {
             color: 'TRANSPARENT',
-            description: `🔨 ${bans.size} ${bans.size < 2 ? 'ban' : 'bans'}`,
+            description: `🔨 This server has ${bans.size} ${bans.size < 2 ? 'ban' : 'bans'}`,
             footer: {
                 text: msg.guild.name,
                 iconURL: bot.versionIMG
