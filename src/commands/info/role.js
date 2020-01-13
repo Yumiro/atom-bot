@@ -9,7 +9,7 @@ exports.run = async (bot, msg, args) => {
     if (argsv2) {
         const role = msg.guild.roles.find(f => f.name === argsv2);
         if (role) {
-            let text = '';
+            let text = msg.guild.name;
 
             if (role.permissions.serialize().ADMINISTRATOR) {
                 text = 'Members with this role have every permission and can bypass any channel specific permissions'
@@ -19,13 +19,13 @@ exports.run = async (bot, msg, args) => {
                 embed: {
                     color: 'TRANSPARENT',
                     footer: {
-                        name: text || msg.guild.name,
+                        name: text,
                         iconURL: msg.guild.iconURL()
                     },
                     fields: [
                         {
                             name: 'User  Count',
-                            value: `${role.members.size < 2 ? 'user' : 'users'}`,
+                            value: `${role.members.size} ${role.members.size < 2 ? 'user' : 'users'}`,
                             inline: true
                         },
                         {
