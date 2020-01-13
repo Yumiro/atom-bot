@@ -9,15 +9,15 @@ exports.run = async (bot, msg, args) => {
             .setFooter(msg.guild.name)
             .setTitle('Help')
         if (bot.config.ownerID.includes(msg.author.id)) {
-            embed.addField(`:no_entry_sign: Owner`, `\`${bot.commands.filter(f => f.help.category === '🚫 Owner' && f.conf.hidden === false).map(f => f.help.name).join(`\` \``)}\``, true)
+            embed.addField(`🚫 Owner`, `\`${bot.commands.filter(f => f.help.category === '🚫 Owner' && f.conf.hidden === false).map(f => f.help.name).join(`\` \``)}\``, true)
         }
 
         if (msg.member.hasPermission('KICK_MEMBERS') && msg.member.hasPermission('BAN_MEMBERS') && msg.member.hasPermission('MANAGE_MESSAGES')) {
-            embed.addField(`:hammer: Moderation`, `\`${bot.commands.filter(f => f.help.category === '🔨 Moderation').map(f => f.help.name).join(`\` \``)}\``, true)
+            embed.addField(`🔨 Moderation`, `\`${bot.commands.filter(f => f.help.category === '🔨 Moderation').map(f => f.help.name).join(`\` \``)}\``, true)
         }
 
-        embed.addField(`:grey_question: Information`, `\`${bot.commands.filter(f => f.help.category === '❔ Info').map(f => f.help.name).join(`\` \``)}\``, false)
-        embed.addField(`:joy: Fun`, `\`${bot.commands.filter(f => f.help.category === '😂 Fun').map(f => f.help.name).join(`\` \``)}\``, true)
+        embed.addField(`❔ Information`, `\`${bot.commands.filter(f => f.help.category === '❔ Info').map(f => f.help.name).join(`\` \``)}\``, false)
+        embed.addField(`😂 Fun`, `\`${bot.commands.filter(f => f.help.category === '😂 Fun').map(f => f.help.name).join(`\` \``)}\``, true)
 
         msg.channel.send(embed);
     };

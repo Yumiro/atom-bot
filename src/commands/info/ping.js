@@ -9,7 +9,7 @@ exports.run = async (bot, msg, args) => {
         m.edit('🏓 Pong!', {
             embed: {
                 color: 'TRANSPARENT',
-                description: `:heartbeat: ${Math.floor(restLatency)}ms\n\n:hourglass: ${Math.floor(bot.ws.ping)}ms`,
+                description: `💓 ${Math.floor(restLatency)}ms\n\n⌛ ${Math.floor(bot.ws.ping)}ms`,
                 footer: {
                     name: msg.guild.name,
                     icon_url: bot.versionIMG
