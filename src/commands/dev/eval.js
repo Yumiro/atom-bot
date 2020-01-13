@@ -43,7 +43,7 @@ exports.conf = {
 exports.help = {
     aliases: ['js', 'code'],
     name: 'eval',
-    category: '🚫 Owner',
+    category: '🧪 Development',
     description: 'Evaluates and executes JavaScript code',
     usage: 'eval [code]'
 }

@@ -12,8 +12,7 @@ const chalk = require('chalk');
 const {
   readdir
 } = require('fs');
-const rbx = require('noblox.js');
-const folders = ['fun', 'info', 'moderation', 'owner'];
+const folders = ['fun', 'info', 'moderation', 'dev'];
 
 this.bot = bot;
 bot.commands = new Collection();
@@ -27,11 +26,13 @@ bot.emojiList = {
   'check': '<:check:657238794499784735>',
   'error': '<:error:657238794461904916>'
 };
+
 global.firstUpper = function firstUpper(string) {
   const first = string.split("")[0].toUpperCase();
   const rest = string.split("").slice(1).join("");
   return first + rest
 };
+
 global.extractDate = (dateObj) => {
   let month = dateObj.getMonth()
   let day = dateObj.getDate()
@@ -42,6 +43,7 @@ global.extractDate = (dateObj) => {
     year: year
   }
 };
+
 global.isEmmaCute = 'yes, very';
 
 readdir("./src/events/", (err, files) => {
@@ -51,7 +53,7 @@ readdir("./src/events/", (err, files) => {
 
   files.forEach(f => {
     const event = require(`./src/events/${f}`);
-    console.log(chalk.blue(`[ LOAD ] Loading ${f} (event)`));
+    console.log(chalk.blue(`Loading ${f} (event)`));
     let event_name = f.split(".")[0];
     bot.on(event_name, event.bind(null, bot));
   });
@@ -65,7 +67,7 @@ folders.forEach(folders => {
 
     files.forEach(f => {
       let cmds = require(`./src/commands/${folders}/${f}`);
-      console.log(chalk.blue(`[ LOAD ] Loading ${f} (command)`));
+      console.log(chalk.blue(`Loading ${f} (command)`));
       bot.commands.set(cmds.help.name, cmds);
       cmds.help.aliases.forEach(alias => {
         bot.aliases.set(alias, cmds.help.name);

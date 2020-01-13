@@ -9,7 +9,7 @@ exports.run = async (bot, msg, args) => {
             .setFooter(msg.guild.name)
             .setTitle('Help')
         if (bot.config.ownerID.includes(msg.author.id)) {
-            embed.addField(`🚫 Owner`, `\`${bot.commands.filter(f => f.help.category === '🚫 Owner' && f.conf.hidden === false).map(f => f.help.name).join(`\` \``)}\``, true)
+            embed.addField(`🧪 Development`, `\`${bot.commands.filter(f => f.help.category === '🧪 Development' && f.conf.hidden === false).map(f => f.help.name).join(`\` \``)}\``, true)
         }
 
         if (msg.member.hasPermission('KICK_MEMBERS') && msg.member.hasPermission('BAN_MEMBERS') && msg.member.hasPermission('MANAGE_MESSAGES')) {

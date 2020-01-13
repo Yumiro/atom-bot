@@ -19,7 +19,7 @@ exports.conf = {
 exports.help = {
     aliases: ['hook'],
     name: 'webhook',
-    category: '🚫 Owner',
-    description: 'Announcement webhook',
+    category: '🧪 Development',
+    description: 'Updates webhook',
     usage: 'webhook [message]'
 }
