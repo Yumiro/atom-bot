@@ -11,7 +11,7 @@ exports.run = async (bot, msg, args) => {
         if (role) {
             msg.channel.send({
                 embed: {
-                    color: 'TRANSPARENT',
+                    color: role.hexColor || 'TRANSPARENT',
                     footer: {
                         name: msg.guild.name,
                         iconURL: msg.guild.iconURL()
