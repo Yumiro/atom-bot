@@ -1,7 +1,7 @@
 const {
     MessageEmbed
 } = require('discord.js');
-const moment = require('moment');
+const { utc } = require('moment');
 
 exports.run = async (bot, msg, args) => {
     const argsv2 = msg.content.split(' ').splice(1).join(' ');
@@ -9,26 +9,67 @@ exports.run = async (bot, msg, args) => {
     if (argsv2) {
         const role = msg.guild.roles.find(f => f.name === argsv2);
         if (role) {
-            const embed = new MessageEmbed()
-                .setThumbnail(msg.guild.iconURL)
-                .setFooter(msg.guild.name)
-                .setColor('TRANSPARENT')
-                .addField('User Count', `${role.members.size} ${role.members.size < 2 ? 'user' : 'users'}`, true)
-                .addField('Permissions', `${role.permissions.bitfield}`, true)
-                .addField('Created At', `${moment.utc(role.createdAt).format('ddd, MMM Do YYYY')}`, true)
-                .addField('Mentionable', `${role.mentionable ? 'Yes' : 'No'}`, true)
-                .addField('Hoisted', `${role.hoist ? 'Yes' : 'No'}`, true)
-                .addField('Color', `${role.hexColor || 'TRANSPARENT'}`, true)
-                .addField('Position', `${role.position}`, true)
-                .addField('Mention', `<\\@\\&${role.id}\>`, true)
-                .addField('ID', `${role.id}`, true)
+            let text = '';
 
             if (role.permissions.serialize().ADMINISTRATOR) {
-                embed.setFooter('Members with this role have every permission and can bypass any channel specific permissions')
+                text = 'Members with this role have every permission and can bypass any channel specific permissions'
             };
 
             msg.channel.send({
-                embed
+                embed: {
+                    color: 'TRANSPARENT',
+                    footer: {
+                        name: text || msg.guild.name,
+                        iconURL: msg.guild.iconURL()
+                    },
+                    fields: [
+                        {
+                            name: 'User  Count',
+                            value: `${role.members.size < 2 ? 'user' : 'users'}`,
+                            inline: true
+                        },
+                        {
+                            name: 'Permissions',
+                            value: `${role.permissions.bitfield}`,
+                            inline: true
+                        },
+                        {
+                            name: 'Created At',
+                            value: `${utc(role.createdAt).format('ddd, MMM Do YYYY')}`,
+                            inline: true
+                        },
+                        {
+                            name: 'Mentionable',
+                            value: `${role.mentionable ? 'Yes' : 'No'}`,
+                            inline: true
+                        },
+                        {
+                            name: 'Hoisted',
+                            value: `${role.hoist ? 'Yes' : 'No'}`,
+                            inline: true
+                        },
+                        {
+                            name: 'Color',
+                            value: `${role.hexColor || 'TRANSPARENT'}`,
+                            inline: true
+                        },
+                        {
+                            name: 'Position',
+                            value: `${role.position}`,
+                            inline: true
+                        },
+                        {
+                            name: 'Mention',
+                            value: `<\\@\\&${role.id}\>`,
+                            inline: true
+                        },
+                        {
+                            name: 'ID',
+                            value: `${role.id}`,
+                            inline: true
+                        }
+                    ]
+                }
             });
         } else {
             /* const embed = new MessageEmbed()
@@ -77,5 +118,5 @@ exports.help = {
     example: 'role green',
     category: '❔ Info',
     description: 'Displays information about a specified role',
-    usage: 'role [rolename]'
+    usage: 'role <rolename>'
 }
