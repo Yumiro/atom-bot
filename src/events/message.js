@@ -15,9 +15,8 @@ module.exports = (bot, msg) => {
     if (!cmd) return;
 
     if (!bot.config.ownerID.includes(msg.author.id) && cmd.conf.dev) {
-        msg.react(`${bot.emojiList.check} You can't do that.`);
+        msg.channel.send(`${bot.emojiList.check} You can't do that.`);
     } else {
         cmd.run(bot, msg, args)
     }
-
 }

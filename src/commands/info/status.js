@@ -1,18 +1,16 @@
 const {
     MessageEmbed
 } = require('discord.js');
-const moment = require('moment');
+const { duration } = require('moment');
 require('moment-duration-format');
 
 exports.run = async (bot, msg, args) => {
-    const duration = moment.duration(bot.uptime).format('D[d], H[h], m[m], s[s]');
-
     var status = new MessageEmbed()
         .setColor('TRANSPARENT')
         .setFooter(msg.guild.name, bot.versionIMG)
         .setTitle(`Bot Status`)
         .addField(`Memory Usage`, (process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2) + 'MB', true)
-        .addField(`Uptime`, duration, true)
+        .addField(`Uptime`, duration(bot.uptime).format('D[d], H[h], m[m], s[s]'), true)
         .addField(`Commands`, bot.commands.size, true)
         .addField(`Servers`, bot.guilds.size, true)
         .addField(`Channels`, bot.channels.size, true)
