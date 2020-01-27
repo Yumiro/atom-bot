@@ -1,3 +1,4 @@
 config
 thing.json
 .vscode/settings.json
+node_modules
